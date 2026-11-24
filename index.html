@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D&amp;M Contabilidade | Bom Retiro - SC</title>
+<meta name="description" content="D&amp;M Contabilidade em Bom Retiro/SC: abertura de empresas, contabilidade consultiva, planejamento tributário, departamento pessoal, imposto de renda, regularização de obras e contabilidade pública.">
+<meta property="og:title" content="D&amp;M Contabilidade">
+<meta property="og:description" content="Assessoria contábil, fiscal e trabalhista para empresas e profissionais em Bom Retiro/SC.">
+<meta property="og:image" content="img/equipe.jpg">
+<link rel="icon" type="image/png" href="img/logo-dm.png">
+<meta name="theme-color" content="#0f4637">
+<script>
+/* ===== CONFIGURAÇÃO DOS TEMAS MENSAIS =====
+   mes: 1 = janeiro ... 12 = dezembro
+   Para criar outro mês: copie um bloco, troque o mês, o tema e o texto,
+   e crie as cores correspondentes no CSS (html[data-tema="..."]).        */
+/*window.TEMAS = {
+  9:  { tema:'amarelo', logo:'img/logo-dm-amarelo.png', cor:'#0f4637', texto:'<b>Setembro Amarelo</b> · Falar é a melhor solução. Precisa conversar? Ligue 188 (CVV).' },
+  10: { tema:'rosa',    logo:'img/logo-dm-rosa.png',    cor:'#6b1842', texto:'<b>Outubro Rosa</b> · Cuide da saúde da mulher: faça seus exames preventivos.' },
+  11: { tema:'azul',    logo:'img/logo-dm-azul.png',    cor:'#0f3460', texto:'<b>Novembro Azul</b> · Cuidar da saúde do homem também é prevenção.' }
+};*/
+(function(){
+  var q=new URLSearchParams(location.search).get('tema'), m=new Date().getMonth()+1, cfg=null;
+  if(q){ for(var k in TEMAS){ if(TEMAS[k].tema===q) cfg=TEMAS[k]; } }
+  else cfg=TEMAS[m]||null;
+  window.TEMA_ATUAL=cfg;
+  document.documentElement.setAttribute('data-tema', cfg?cfg.tema:'padrao');
+  if(cfg) document.querySelector('meta[name="theme-color"]').setAttribute('content',cfg.cor);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   DESIGN SYSTEM · D&M CONTABILIDADE
+   --------------------------------------------------------------------------
+   Base 8 px / 4 px ... todo espaçamento, tamanho, raio e altura de linha
+                         é múltiplo de 4 (preferência por múltiplos de 8).
+   Alinhamento padrão .. 16 px (gutter da grade e margem mínima).
+   Grade ............... Desktop ≥1024 px: 16 colunas
+                         Tablet 768–1023 px: 8 colunas
+                         Mobile <768 px:     4 colunas
+   Tipografia .......... Open Sans 400 (texto) e 700 (títulos, rótulos, botões)
+                         Anton (display)
+   Ícones .............. traço acompanha o peso do texto ao lado:
+                         texto 400 → 1.5 px | texto 700 → 2 px
+   Ver a grade: tecle G no site (ou abra com ?grade=1)
+   ========================================================================== */
+:root{
+  /* espaçamento */
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:40px;--s8:48px;--s9:56px;--s10:64px;--s12:80px;--s14:96px;--s16:128px;
+  /* grade */
+  --cols:16;--gutter:16px;--margem:48px;--max:1280px;
+  /* raios */
+  --r1:4px;--r2:8px;--r3:16px;--r4:24px;--r-full:999px;
+  /* tipografia (tamanho / altura de linha) */
+  --t-display:88px;--lh-display:96px;
+  --t-h2:64px;--lh-h2:76px;
+  --t-h3:24px;--lh-h3:28px;
+  --t-num:56px;
+  --t-lead:20px;--lh-lead:32px;
+  --t-corpo:16px;--lh-corpo:24px;
+  --t-peq:16px;--lh-peq:24px;
+  --t-mini:12px;--lh-mini:16px;
+  /* traço dos ícones */
+  --ic-400:1.5px;--ic-700:2px;
+  /* cores */
+  --verde:#0f4637;--verde-2:#0b382c;--verde-3:#072a21;--verde-claro:#1b6b55;
+  --laranja:#e9471f;--laranja-2:#c93a15;
+  --creme:#f5f1ea;--texto:#16241f;--cinza:#56655f;
+  --linha:rgba(255,255,255,.16);
+  --sobre:#fff;--tag-txt:#ffc7b7;
+  --laranja-rgb:233,71,31;--verde-rgb:15,70,55;--verde3-rgb:7,42,33;--verdeclaro-rgb:27,107,85;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+@media (max-width:1023px){
+  :root{--cols:8;--margem:32px;
+    --t-display:64px;--lh-display:72px;--t-h2:52px;--lh-h2:64px;--t-h3:20px;--lh-h3:24px;--t-num:48px;--t-lead:20px;--lh-lead:28px}
+}
+@media (max-width:767px){
+  :root{--cols:4;--margem:16px;
+    --t-display:48px;--lh-display:56px;--t-h2:40px;--lh-h2:52px;--t-h3:20px;--lh-h3:24px;--t-num:40px;--t-lead:16px;--lh-lead:24px}
+}
+
+/* ===== TEMAS MENSAIS (index.html?tema=rosa | azul | amarelo | padrao) ===== */
+html[data-tema="rosa"]{
+  --verde:#6b1842;--verde-2:#561335;--verde-3:#3b0c24;--verde-claro:#94305f;
+  --laranja:#e5458a;--laranja-2:#c4306f;--creme:#fcf0f5;--cinza:#6f5a64;--texto:#2a1620;
+  --sobre:#fff;--tag-txt:#ffd1e5;
+  --laranja-rgb:229,69,138;--verde-rgb:107,24,66;--verde3-rgb:59,12,36;--verdeclaro-rgb:148,48,95;
+}
+html[data-tema="azul"]{
+  --verde:#0f3460;--verde-2:#0b294d;--verde-3:#061b35;--verde-claro:#1f5596;
+  --laranja:#2f7de1;--laranja-2:#1f66c2;--creme:#eef4fb;--cinza:#56657a;--texto:#14202f;
+  --sobre:#fff;--tag-txt:#cfe3ff;
+  --laranja-rgb:47,125,225;--verde-rgb:15,52,96;--verde3-rgb:6,27,53;--verdeclaro-rgb:31,85,150;
+}
+html[data-tema="amarelo"]{
+  --laranja:#f6c419;--laranja-2:#ddab00;--creme:#fdf8e8;
+  --sobre:#1f1a0a;--tag-txt:#ffe9a3;--laranja-rgb:246,196,25;
+}
+
+/* ===== BASE ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:var(--s10)}
+body{font-family:"Open Sans",system-ui,sans-serif;font-size:var(--t-corpo);line-height:var(--lh-corpo);font-weight:400;color:var(--texto);background:var(--verde-3);overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--laranja);outline-offset:4px}
+
+/* ===== GRADE ===== */
+.wrap{width:100%;max-width:calc(var(--max) + var(--margem)*2);margin:0 auto;padding:0 var(--margem)}
+.grid{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));column-gap:var(--gutter);row-gap:var(--s4)}
+/* colunas: --d (desktop/16) --t (tablet/8) --m (mobile/4); início opcional --ds --ts */
+.grid>*{grid-column:var(--ds,auto) / span var(--d,16)}
+@media (max-width:1023px){.grid>*{grid-column:var(--ts,auto) / span var(--t,8)}}
+@media (max-width:767px){.grid>*{grid-column:auto / span var(--m,4)}}
+.overlay-grade{position:fixed;inset:0;z-index:300;pointer-events:none;display:none}
+.overlay-grade .wrap{height:100%}
+.overlay-grade .grid{height:100%}
+.overlay-grade .grid>i{--d:1;--t:1;--m:1;background:rgba(255,0,90,.12);border-left:1px solid rgba(255,0,90,.35);border-right:1px solid rgba(255,0,90,.35)}
+html.ver-grade .overlay-grade{display:block}
+
+/* ===== ÍCONES ===== */
+.i{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:var(--ic-700);stroke-linecap:round;stroke-linejoin:round}
+.i *{vector-effect:non-scaling-stroke}
+.i.fino{stroke-width:var(--ic-400)}           /* ao lado de texto 400 */
+.i.cheio{fill:currentColor;stroke:none}        /* ícones de marca (WhatsApp) */
+.i16{width:16px;height:16px}.i20{width:20px;height:20px}.i32{width:32px;height:32px}
+
+/* ===== TIPOGRAFIA ===== */
+.anton{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0}
+.display{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:var(--t-display);line-height:var(--lh-display)}
+.h2{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:var(--t-h2);line-height:var(--lh-h2);margin-top:var(--s4)}
+.h3{font-size:var(--t-h3);line-height:var(--lh-h3);font-weight:700}
+.lead{font-size:var(--t-lead);line-height:var(--lh-lead)}
+.sub{font-size:var(--t-corpo);line-height:var(--lh-corpo);color:var(--cinza)}
+.tarja{display:inline-block;padding:var(--s1) var(--s3) var(--s2);line-height:1;margin:var(--s1) 0}
+.t-laranja{background:var(--laranja);color:var(--sobre)}
+.t-verde{background:var(--verde);color:#fff}
+.eyebrow{display:inline-flex;align-items:center;gap:var(--s3);font-size:var(--t-corpo);line-height:var(--lh-corpo);font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--laranja)}
+.eyebrow::before{content:"";width:var(--s6);height:2px;background:currentColor}
+@media (max-width:767px){.eyebrow{font-size:var(--t-peq);line-height:var(--lh-peq);letter-spacing:2px;gap:var(--s2)}.eyebrow::before{width:var(--s5)}}
+.escuro{background:var(--verde);color:#fff}
+.escuro .sub{color:rgba(255,255,255,.8)}
+.claro{background:var(--creme);color:var(--texto)}
+.claro .h2{color:var(--verde)}
+
+/* decorativos */
+.pontos{position:absolute;width:96px;height:96px;background-image:radial-gradient(currentColor 2px,transparent 2.5px);background-size:16px 16px;pointer-events:none}
+.padrao{position:absolute;inset:0;pointer-events:none;opacity:.5;background:repeating-linear-gradient(135deg,transparent 0 112px,rgba(255,255,255,.035) 112px 113px),repeating-linear-gradient(45deg,transparent 0 112px,rgba(255,255,255,.035) 112px 113px)}
+
+/* ===== BOTÕES (altura 48) ===== */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);height:var(--s8);padding:0 var(--s5);font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;letter-spacing:2px;text-transform:uppercase;border:0;border-radius:var(--r1);cursor:pointer;overflow:hidden;isolation:isolate;white-space:nowrap;transition:color .3s var(--ease),box-shadow .3s}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;transform:translateY(101%);transition:transform .4s var(--ease)}
+.btn:hover::after{transform:none}
+.btn .i{width:20px;height:20px}
+.b-laranja{background:var(--laranja);color:var(--sobre)}
+.b-laranja::after{background:var(--verde-3)}
+.b-laranja:hover{color:#fff}
+.b-linha{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.48)}
+.b-linha::after{background:#fff}
+.b-linha:hover{color:var(--verde)}
+.acoes{display:flex;flex-wrap:wrap;gap:var(--s4);margin-top:var(--s6)}
+
+/* ===== HEADER (80 → 64) ===== */
+header{position:fixed;inset:0 0 auto;z-index:100;transition:background .3s,box-shadow .3s}
+header.solido{background:rgba(var(--verde3-rgb),.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--linha)}
+.nav{height:var(--s12);display:flex;align-items:center;justify-content:space-between;transition:height .3s}
+header.solido .nav{height:var(--s10)}
+.logo img{height:var(--s7);width:auto;transition:height .3s}
+header.solido .logo img{height:var(--s6)}
+.menu{display:flex;align-items:center;gap:var(--s6)}
+.menu a:not(.btn){font-size:var(--t-peq);line-height:var(--lh-peq);font-weight:700;color:rgba(255,255,255,.84);position:relative;padding:var(--s2) 0}
+.menu a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--laranja);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.menu a:not(.btn):hover{color:#fff}
+.menu a:not(.btn):hover::after{transform:none}
+.menu .btn{height:var(--s7);padding:0 var(--s4)}
+.burger{display:none;width:var(--s8);height:var(--s8);background:none;border:0;cursor:pointer;position:relative}
+.burger span{position:absolute;left:var(--s3);right:var(--s3);height:2px;margin-top:-1px;background:#fff;transition:.3s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:24px}.burger span:nth-child(3){top:32px}
+.burger.x span:nth-child(1){top:24px;transform:rotate(45deg)}
+.burger.x span:nth-child(2){opacity:0}
+.burger.x span:nth-child(3){top:24px;transform:rotate(-45deg)}
+
+/* ===== HERO ===== */
+.hero{position:relative;background:var(--verde);color:#fff;overflow:hidden;padding:var(--s16) 0 var(--s14)}
+.hero::before{content:"";position:absolute;width:896px;height:896px;right:-256px;top:-192px;border-radius:50%;background:radial-gradient(circle,rgba(var(--verdeclaro-rgb),.9),transparent 64%)}
+.hero .pontos{color:var(--laranja);right:var(--s6);bottom:var(--s10);opacity:.5}
+.hero .grid{position:relative;align-items:center;row-gap:var(--s8)}
+.hero .display{margin:0 0 var(--s5)}
+.hero .display .linha{display:block;overflow:hidden;padding-top:var(--s2);margin-top:calc(var(--s2) * -1)}
+.hero .display .linha>span{display:inline-block;transform:translateY(110%);animation:sobe .9s var(--ease) forwards}
+.hero .display .linha:nth-child(2)>span{animation-delay:.12s}
+.hero .display .linha:nth-child(3)>span{animation-delay:.24s}
+@keyframes sobe{to{transform:none}}
+.hero .lead{color:rgba(255,255,255,.86)}
+.hero .lead b{color:#fff}
+/* faixa da campanha do mês (topo do site) */
+.aviso{display:none;background:var(--laranja);color:var(--sobre);overflow:hidden;height:var(--s7);transition:height .3s var(--ease)}
+html[data-tema]:not([data-tema="padrao"]) .aviso{display:block}
+.aviso .wrap{height:100%;display:flex;align-items:center;justify-content:center;gap:var(--s2);font-size:var(--t-peq);line-height:var(--lh-peq);text-align:center}
+.aviso b{font-weight:700}
+header.solido .aviso,html.aviso-fechado .aviso{height:0}
+html[data-tema]:not([data-tema="padrao"]):not(.aviso-fechado) .hero{padding-top:calc(var(--s16) + var(--s7))}
+.aviso .fechar{margin-left:var(--s2);width:var(--s6);height:var(--s6);display:grid;place-items:center;background:none;border:0;color:inherit;cursor:pointer;border-radius:50%;flex:none}
+.aviso .fechar:hover{background:rgba(0,0,0,.12)}
+.aviso .fechar .i{width:16px;height:16px}
+.hero-foto{position:relative;aspect-ratio:4/3}
+.hero-foto .bloco{position:absolute;inset:var(--s5) 0 0 var(--s5);background:var(--laranja);border-radius:var(--s16) var(--r4) var(--r4) var(--r4)}
+.hero-foto .moldura{position:absolute;inset:0 var(--s5) var(--s5) 0;border-radius:var(--s16) var(--r4) var(--r4) var(--r4);overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.32)}
+.hero-foto .moldura img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:zoom 1.6s var(--ease) both}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.selo{position:absolute;left:calc(var(--s8) * -1);bottom:var(--s10);width:128px;height:128px;display:grid;place-items:center;background:var(--verde-3);border-radius:50%;box-shadow:0 16px 40px rgba(0,0,0,.32)}
+.selo svg{position:absolute;inset:0;width:100%;height:100%;animation:gira 20s linear infinite}
+.selo text{font-family:"Open Sans";font-weight:700;font-size:9.4px;letter-spacing:1.5px;fill:#fff;text-transform:uppercase}
+.selo .num{font-family:"Anton";font-size:32px;line-height:32px;color:var(--laranja);text-align:center}
+.selo .num small{display:block;font-family:"Open Sans";font-size:8px;line-height:12px;font-weight:700;letter-spacing:1px;color:#fff;margin-top:var(--s1);text-transform:uppercase}
+@keyframes gira{to{transform:rotate(360deg)}}
+.flutua{position:absolute;right:0;bottom:calc(var(--s4) * -1);background:#fff;color:var(--verde);padding:var(--s4);border-radius:var(--r3);box-shadow:0 16px 40px rgba(0,0,0,.28);width:208px;animation:boia 5s ease-in-out infinite}
+.flutua .anton{font-size:32px;line-height:32px;color:var(--laranja)}
+.flutua p{font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;margin-top:var(--s1)}
+@keyframes boia{50%{transform:translateY(-8px)}}
+
+/* ===== FAIXA ===== */
+.faixa{background:var(--laranja);color:var(--sobre);overflow:hidden;white-space:nowrap;position:relative;z-index:2;transform:rotate(-1.2deg);margin:calc(var(--s6) * -1) calc(var(--s4) * -1) 0;box-shadow:0 16px 32px rgba(0,0,0,.24)}
+.faixa .trilho{display:inline-flex;height:var(--s10);align-items:center;animation:corre 40s linear infinite}
+.faixa span{font-family:"Anton";font-size:24px;line-height:24px;text-transform:uppercase;display:inline-flex;align-items:center;gap:var(--s6);padding-right:var(--s6)}
+.faixa span::after{content:"";width:var(--s2);height:var(--s2);background:var(--verde);transform:rotate(45deg)}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+/* ===== SEÇÕES ===== */
+section{position:relative}
+.sec{padding:var(--s16) 0}
+.cab{margin-bottom:var(--s8);align-items:end}
+
+/* quem somos */
+.quem{padding-top:calc(var(--s16) + var(--s6))}
+.frase{font-size:28px;line-height:40px;font-weight:700;color:var(--verde)}
+.frase .w{opacity:.16;transition:opacity .4s}
+.frase .w.on{opacity:1}
+.frase em{font-style:normal;color:var(--laranja)}
+.quem .txt{margin-top:var(--s5);color:var(--cinza)}
+.missao{margin-top:var(--s8);display:flex;gap:var(--s5);align-items:center;background:var(--verde);color:#fff;border-radius:var(--r3);padding:var(--s6)}
+.missao .alvo{width:72px;height:72px;flex:none}
+.missao h3{font-family:"Anton";font-weight:400;text-transform:uppercase;font-size:24px;line-height:28px}
+.missao h3 span{color:var(--laranja)}
+.missao p{color:rgba(255,255,255,.86);margin-top:var(--s1)}
+.numeros{margin-top:var(--s14);padding-top:var(--s6);border-top:2px solid var(--verde);row-gap:var(--s6)}
+.numero .anton{font-size:var(--t-num);line-height:var(--t-num);color:var(--verde)}
+.numero sup,.numero small{color:var(--laranja);font-size:calc(var(--t-num) / 2)}
+.numero p{font-size:var(--t-peq);line-height:var(--lh-peq);color:var(--cinza);font-weight:700;margin-top:var(--s2)}
+
+/* como atendemos */
+.jeito{background:var(--verde-3);color:#fff}
+.jeito-img{position:sticky;top:var(--s14);border-radius:var(--r3);overflow:hidden;aspect-ratio:4/5;align-self:start}
+.jeito-img img{width:100%;height:100%;object-fit:cover}
+.jeito-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(var(--verde3-rgb),.92))}
+.jeito-img .leg{position:absolute;left:var(--s6);right:var(--s6);bottom:var(--s6);z-index:1;font-size:40px;line-height:44px}
+.jeito-lista{margin-top:var(--s8)}
+.jeito-item{display:grid;grid-template-columns:var(--s14) 1fr;gap:var(--s4);padding:var(--s6) 0;border-top:1px solid var(--linha)}
+.jeito-item:last-child{border-bottom:1px solid var(--linha)}
+.jeito-item .n{font-family:"Anton";font-size:40px;line-height:40px;color:transparent;-webkit-text-stroke:1.5px var(--laranja);transition:color .4s}
+.jeito-item:hover .n{color:var(--laranja)}
+.jeito-item p{color:rgba(255,255,255,.76);margin-top:var(--s2)}
+
+/* serviços */
+.servicos{background:var(--creme);overflow:hidden}
+@media (min-width:1024px){
+  .servicos.sec{padding:var(--s10) 0}
+  .servicos .cab{margin-bottom:var(--s6)}
+}
+.servicos .pontos{color:var(--laranja);right:var(--s6);top:var(--s14);opacity:.6}
+.serv-lista{list-style:none}
+.serv-lista li{border-top:1px solid rgba(var(--verde-rgb),.16)}
+.serv-lista li:last-child{border-bottom:1px solid rgba(var(--verde-rgb),.16)}
+.serv-btn{all:unset;box-sizing:border-box;width:100%;height:52px;cursor:pointer;display:grid;grid-template-columns:var(--s6) 1fr var(--s6);align-items:center;gap:var(--s4);padding:0 var(--s2);transition:padding .3s var(--ease),background .3s}
+.serv-btn .n{font-family:"Anton";font-size:16px;line-height:20px;color:var(--laranja)}
+.serv-btn .nome{font-family:"Anton";text-transform:uppercase;font-size:20px;line-height:24px;color:var(--verde);transition:color .3s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.serv-btn .seta{width:var(--s6);height:var(--s6);border-radius:50%;display:grid;place-items:center;border:2px solid rgba(var(--verde-rgb),.24);color:var(--verde);transition:.3s var(--ease)}
+.serv-btn .seta .i{width:16px;height:16px}
+.serv-btn:hover,.serv-btn[aria-selected="true"]{padding-left:var(--s4)}
+.serv-btn[aria-selected="true"]{background:rgba(var(--laranja-rgb),.08)}
+.serv-btn[aria-selected="true"] .nome{color:var(--laranja)}
+.serv-btn[aria-selected="true"] .seta{background:var(--laranja);border-color:var(--laranja);color:var(--sobre);transform:rotate(-45deg)}
+.serv-btn:focus-visible{outline:2px solid var(--laranja);outline-offset:-2px}
+.painel{position:relative;align-self:stretch;background:var(--verde);color:#fff;border-radius:var(--r3);padding:var(--s6);overflow:hidden;display:flex;flex-direction:column}
+.painel .padrao{opacity:.7}
+.painel .bignum{position:absolute;right:-8px;bottom:-40px;font-family:"Anton";font-size:160px;line-height:160px;color:rgba(255,255,255,.05);pointer-events:none}
+.painel .ic{width:var(--s8);height:var(--s8);border-radius:var(--r2);background:var(--laranja);color:var(--sobre);display:grid;place-items:center;margin-bottom:var(--s4)}
+.painel .ic .i{width:24px;height:24px}
+.painel h3{font-family:"Anton";font-weight:400;text-transform:uppercase;font-size:32px;line-height:40px}
+.painel p{margin-top:var(--s4);color:rgba(255,255,255,.88)}
+.painel .destaque{margin-top:var(--s5);display:inline-flex;align-items:center;gap:var(--s3);align-self:flex-start;background:rgba(255,255,255,.08);border:1px solid var(--linha);padding:var(--s2) var(--s4);border-radius:var(--r2);font-size:var(--t-peq);line-height:var(--lh-peq);font-weight:700}
+.painel .destaque b{font-family:"Anton";font-weight:400;font-size:24px;line-height:32px;color:var(--laranja)}
+.painel .tags{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:var(--s5)}
+.painel .tags span{font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;padding:var(--s1) var(--s3);border-radius:var(--r-full);background:rgba(var(--laranja-rgb),.18);color:var(--tag-txt)}
+.painel .rodape{margin-top:auto;padding-top:var(--s6)}
+.painel .anim{position:relative;display:flex;flex-direction:column;flex:1;animation:entra .5s var(--ease)}
+@keyframes entra{from{opacity:0;transform:translateY(16px)}}
+.serv-mobile{display:none}
+.acc{border-top:1px solid rgba(var(--verde-rgb),.16)}
+.acc:last-child{border-bottom:1px solid rgba(var(--verde-rgb),.16)}
+.acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:var(--s6) 1fr var(--s6);gap:var(--s3);align-items:center;min-height:var(--s14);padding:var(--s4) 0}
+.acc summary::-webkit-details-marker{display:none}
+.acc .n{font-family:"Anton";color:var(--laranja)}
+.acc .nome{font-family:"Anton";text-transform:uppercase;font-size:20px;line-height:24px;color:var(--verde)}
+.acc .mais{width:var(--s6);height:var(--s6);border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center;transition:transform .3s}
+.acc .mais .i{width:16px;height:16px}
+.acc[open] .mais{transform:rotate(45deg);background:var(--laranja);color:var(--sobre)}
+.acc .corpo{padding:0 0 var(--s5) calc(var(--s6) + var(--s3));color:var(--cinza)}
+.acc .corpo b{color:var(--laranja)}
+
+/* quem atendemos */
+.paraquem{background:var(--laranja);color:var(--sobre);overflow:hidden}
+.paraquem .eyebrow{color:var(--verde)}
+.paraquem .pontos{color:var(--verde);left:var(--s6);bottom:var(--s8);opacity:.6}
+.pq-foto{margin-top:var(--s8);border-radius:var(--r3);overflow:hidden;aspect-ratio:4/3;box-shadow:0 24px 48px rgba(0,0,0,.2);transform:rotate(-2deg)}
+.pq-foto img{width:100%;height:100%;object-fit:cover}
+.pq-lista{list-style:none;align-self:center}
+.pq-lista li{position:relative;border-top:2px solid color-mix(in srgb,var(--sobre) 32%,transparent);overflow:hidden}
+.pq-lista li:last-child{border-bottom:2px solid color-mix(in srgb,var(--sobre) 32%,transparent)}
+.pq-lista li::before{content:"";position:absolute;inset:0;background:var(--verde);transform:translateY(101%);transition:transform .45s var(--ease)}
+.pq-lista li:hover::before{transform:none}
+.pq-lista .in{position:relative;display:flex;align-items:center;gap:var(--s4);min-height:var(--s14);padding:var(--s4);transition:color .3s}
+.pq-lista li:hover .in{color:#fff}
+.pq-lista .n{font-family:"Anton";font-size:16px;line-height:16px;width:var(--s8);height:var(--s8);border-radius:50%;display:grid;place-items:center;background:var(--verde);color:#fff;flex:none}
+.pq-lista .t{font-family:"Anton";text-transform:uppercase;font-size:32px;line-height:36px}
+.pq-lista .i{margin-left:auto;width:32px;height:32px;opacity:0;transform:translateX(-16px);transition:.4s var(--ease)}
+.pq-lista li:hover .i{opacity:1;transform:none}
+
+/* jornada */
+.jornada{overflow:hidden}
+.jornada .padrao{opacity:.6}
+.jor-nav{display:flex;gap:var(--s2);justify-content:flex-end}
+.jor-nav button{width:var(--s8);height:var(--s8);border-radius:50%;border:2px solid rgba(255,255,255,.4);background:none;color:#fff;cursor:pointer;display:grid;place-items:center;transition:.3s}
+.jor-nav button:hover{background:var(--laranja);border-color:var(--laranja);color:var(--sobre)}
+.progresso{height:4px;background:rgba(255,255,255,.16);position:relative;border-radius:var(--r-full)}
+.progresso i{position:absolute;inset:0 auto 0 0;width:0;background:var(--laranja);border-radius:var(--r-full);transition:width .2s}
+.trilha{margin-top:var(--s6);display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - var(--gutter)*2) / 3);gap:var(--gutter);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s4);scrollbar-width:none;cursor:grab}
+.trilha::-webkit-scrollbar{display:none}
+.trilha.arrastando{cursor:grabbing;scroll-snap-type:none}
+.etapa{scroll-snap-align:start;background:var(--verde-2);border:1px solid var(--linha);border-radius:var(--r3);padding:var(--s6);position:relative;user-select:none;transition:transform .4s var(--ease),border-color .3s}
+.etapa:hover{transform:translateY(-8px);border-color:rgba(var(--laranja-rgb),.6)}
+.etapa .n{font-family:"Anton";font-size:64px;line-height:56px;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.36)}
+.etapa:nth-child(odd) .n{-webkit-text-stroke-color:var(--laranja)}
+.etapa h3{font-family:"Anton";font-weight:400;text-transform:uppercase;font-size:24px;line-height:28px;margin:var(--s5) 0 var(--s4)}
+.etapa ul{list-style:none;display:grid;gap:var(--s2)}
+.etapa li{display:flex;gap:var(--s3);font-size:var(--t-peq);line-height:var(--lh-peq);color:rgba(255,255,255,.84)}
+.etapa li::before{content:"";flex:none;width:var(--s2);height:var(--s2);margin-top:var(--s2);background:var(--laranja);transform:rotate(45deg)}
+.etapa .gratis{position:absolute;top:var(--s6);right:var(--s6);background:var(--laranja);color:var(--sobre);font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:var(--s1) var(--s2);border-radius:var(--r1)}
+
+/* diferenciais */
+.bento{grid-auto-rows:minmax(208px,auto);row-gap:var(--gutter)}
+.cel{border-radius:var(--r3);padding:var(--s6);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .4s var(--ease)}
+.cel:hover{transform:translateY(-4px)}
+.cel .ic{position:absolute;top:var(--s6);left:var(--s6);width:var(--s8);height:var(--s8);border-radius:var(--r2);display:grid;place-items:center}
+.cel p{margin-top:var(--s2)}
+.c1{grid-row:span 2;background:var(--verde);color:#fff}
+.c1 .citacao{font-family:"Anton";text-transform:uppercase;font-size:56px;line-height:56px;margin:var(--s14) 0 auto}
+.c1 .citacao span{color:var(--laranja)}
+.c1 p{color:rgba(255,255,255,.84)}
+.c1 .ic,.c5 .ic{background:var(--laranja);color:var(--sobre)}
+.c2{background:var(--laranja);color:var(--sobre)}
+.c2 .ic{background:#fff;color:var(--laranja)}
+.c3,.c4{background:#fff}
+.c3 .ic,.c4 .ic{background:var(--verde);color:#fff}
+.c3 .h3,.c4 .h3{color:var(--verde)}
+.c3 p,.c4 p{color:var(--cinza)}
+.c5{background:var(--verde-3);color:#fff}
+.c5 p{color:rgba(255,255,255,.8)}
+
+/* equipe */
+.equipe{background:var(--verde-3);color:#fff}
+.equipe .sub{color:rgba(255,255,255,.8)}
+.eq-grid{row-gap:var(--gutter)}
+.lider{grid-row:span 2;position:relative;border-radius:var(--r3);overflow:hidden;min-height:480px;background:var(--laranja);color:#fff}
+.lider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.lider::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(var(--verde3-rgb),.6) 55%,rgba(var(--verde3-rgb),.96))}
+.lider .txt{position:absolute;left:var(--s5);right:var(--s5);bottom:var(--s5);z-index:1}
+.lider .cargo{display:inline-block;font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--laranja);color:var(--sobre);padding:var(--s1) var(--s2);border-radius:var(--r1)}
+.lider h3{font-family:"Anton";font-weight:400;text-transform:uppercase;font-size:28px;line-height:32px;margin:var(--s3) 0 var(--s2)}
+.lider p{font-size:var(--t-peq);line-height:var(--lh-peq);color:rgba(255,255,255,.84)}
+.lider .big{margin-top:var(--s3);font-family:"Anton";font-size:48px;line-height:48px;color:var(--laranja)}
+.lider .big small{display:block;font-family:"Open Sans";font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;margin-top:var(--s1)}
+.pessoa{position:relative;border-radius:var(--r3);overflow:hidden;aspect-ratio:4/5;background:var(--verde)}
+.pessoa img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.pessoa:hover img{transform:scale(1.06)}
+.pessoa::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(var(--verde3-rgb),.96));transition:.4s}
+.pessoa:hover::after{background:linear-gradient(180deg,rgba(var(--laranja-rgb),.08) 24%,rgba(var(--laranja-rgb),.96))}
+.pessoa .info{position:absolute;left:var(--s4);right:var(--s4);bottom:var(--s4);z-index:1;color:#fff;transition:color .3s}
+.pessoa:hover .info{color:var(--sobre)}
+.pessoa h4{font-size:var(--t-corpo);line-height:var(--lh-corpo);font-weight:700}
+.pessoa span{display:block;font-size:var(--t-mini);line-height:var(--lh-mini);opacity:.84;margin-top:var(--s1)}
+.pessoa.cta{background:var(--laranja);color:var(--sobre);display:flex;align-items:flex-end;padding:var(--s5)}
+.pessoa.cta::after{display:none}
+.pessoa.cta .anton{font-size:28px;line-height:32px}
+.pessoa.cta .ver{display:inline-flex;align-items:center;gap:var(--s2);margin-top:var(--s4);font-size:var(--t-peq);line-height:var(--lh-peq);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.eq-foto{margin-top:var(--gutter);border-radius:var(--r3);overflow:hidden;position:relative;aspect-ratio:21/8}
+.eq-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+.eq-foto .tag{position:absolute;left:var(--s5);bottom:var(--s5);background:#fff;color:var(--verde);padding:var(--s3) var(--s4);border-radius:var(--r2);font-weight:700;font-size:var(--t-peq);line-height:var(--lh-peq)}
+.eq-foto .tag b{color:var(--laranja)}
+
+/* próximo passo */
+.historia{overflow:hidden;text-align:center}
+.historia .padrao{opacity:.8}
+.historia .pontos{color:var(--laranja);opacity:.6}
+.historia .p1{left:var(--s6);top:var(--s10)}.historia .p2{right:var(--s6);bottom:var(--s10)}
+.historia .h2{font-size:calc(var(--t-h2) + 8px);line-height:calc(var(--lh-h2) + 8px)}
+.historia .lead{margin-top:var(--s5);color:rgba(255,255,255,.86)}
+.pergunta{margin-top:var(--s8);min-height:var(--s10);font-size:24px;line-height:32px;font-weight:700}
+.pergunta .cursor{display:inline-block;width:4px;height:24px;background:var(--laranja);vertical-align:-4px;margin-left:var(--s1);animation:pisca 1s steps(1) infinite}
+@keyframes pisca{50%{opacity:0}}
+.historia .acoes{justify-content:center}
+
+/* contato */
+.canais{margin-top:var(--s8);display:grid;gap:var(--s3)}
+.canal{display:flex;align-items:center;gap:var(--s4);padding:var(--s3) var(--s4);min-height:var(--s10);background:#fff;border-radius:var(--r3);transition:transform .3s var(--ease),box-shadow .3s}
+a.canal:hover{transform:translateX(8px);box-shadow:0 8px 32px rgba(var(--verde-rgb),.12)}
+.canal .ic{width:var(--s7);height:var(--s7);border-radius:var(--r2);background:var(--verde);color:#fff;display:grid;place-items:center;flex:none}
+.canal:nth-child(even) .ic{background:var(--laranja);color:var(--sobre)}
+.canal .ic .i{width:20px;height:20px}
+.canal small{display:block;font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--cinza)}
+.canal strong{display:block;color:var(--verde);font-size:var(--t-corpo);line-height:var(--lh-corpo);word-break:break-word}
+.mapa{margin-top:var(--s3);border-radius:var(--r3);overflow:hidden;height:240px;background:#ddd}
+.mapa iframe{width:100%;height:100%;border:0}
+form{background:var(--verde);color:#fff;border-radius:var(--r3);padding:var(--s8) var(--s6);display:grid;gap:var(--s5);position:relative;overflow:hidden;align-self:start}
+form .padrao{opacity:.5}
+form>*{position:relative}
+form h3{font-family:"Anton";font-weight:400;text-transform:uppercase;font-size:32px;line-height:36px}
+form h3 span{color:var(--laranja)}
+form>p{color:rgba(255,255,255,.78);margin-top:calc(var(--s3) * -1)}
+.campos2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
+.rotulo,label{display:block;font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.78);margin-bottom:var(--s2)}
+input,select,textarea{width:100%;font:inherit;font-size:var(--t-corpo);line-height:var(--lh-corpo);color:#fff;background:rgba(255,255,255,.06);border:0;border-bottom:2px solid rgba(255,255,255,.24);padding:var(--s3) var(--s3);height:var(--s8);border-radius:var(--r1) var(--r1) 0 0;transition:border-color .3s,background .3s}
+textarea{height:auto;min-height:112px;resize:vertical}
+select option{color:var(--texto)}
+input::placeholder,textarea::placeholder{color:rgba(255,255,255,.44)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--laranja);background:rgba(255,255,255,.1)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.chips input{position:absolute;opacity:0;pointer-events:none;width:auto;height:auto}
+.chips label{margin:0;cursor:pointer;height:var(--s7);display:inline-flex;align-items:center;padding:0 var(--s4);border-radius:var(--r-full);border:2px solid rgba(255,255,255,.28);font-size:var(--t-peq);line-height:var(--lh-peq);letter-spacing:0;text-transform:none;color:#fff;transition:.25s}
+.chips input:checked+label{background:var(--laranja);border-color:var(--laranja);color:var(--sobre)}
+.chips input:focus-visible+label{outline:2px solid #fff;outline-offset:2px}
+form .btn{width:100%}
+form .obs{font-size:var(--t-mini);line-height:var(--lh-mini);color:rgba(255,255,255,.64);text-align:center;margin-top:calc(var(--s2) * -1)}
+
+/* rodapé */
+footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0 var(--s4);overflow:hidden}
+.ft-gigante{font-family:"Anton";text-transform:uppercase;font-size:136px;line-height:120px;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.14);white-space:nowrap;margin-bottom:var(--s10)}
+.ft-gigante span{-webkit-text-stroke-color:rgba(var(--laranja-rgb),.6)}
+.ft-grid{padding-bottom:var(--s6);border-bottom:1px solid var(--linha);row-gap:var(--s6)}
+.ft-grid img{height:var(--s8);width:auto}
+.ft-grid p{margin-top:var(--s3);font-size:var(--t-mini);line-height:var(--lh-mini);max-width:280px}
+.ft-grid h5{color:#fff;font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:var(--s3)}
+.ft-grid ul{list-style:none;display:grid;gap:var(--s1);font-size:var(--t-mini);line-height:var(--lh-mini)}
+.ft-grid li{padding:var(--s1) 0}
+.ft-grid a:hover{color:var(--laranja)}
+.copy{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--s2) var(--s4);min-height:var(--s10);padding:var(--s3) var(--s12) 0 0;font-size:var(--t-mini);line-height:var(--lh-mini)}
+@media (max-width:767px){.copy{flex-direction:column;align-items:flex-start;padding:var(--s4) 0 var(--s12)}}
+.copy .ctech{color:#fff}
+.topo{display:inline-flex;align-items:center;gap:var(--s2);color:#fff;font-weight:700}
+.topo:hover{color:var(--laranja)}
+
+/* whatsapp */
+.whats{position:fixed;right:var(--s5);bottom:var(--s5);z-index:90;display:flex;align-items:center;gap:var(--s2);height:var(--s10);min-width:var(--s10);padding:0 var(--s4);background:#25d366;color:#fff;border-radius:var(--r-full);box-shadow:0 12px 32px rgba(0,0,0,.28)}
+.whats .i{width:32px;height:32px}
+.whats span{max-width:0;overflow:hidden;white-space:nowrap;font-weight:700;font-size:var(--t-peq);transition:max-width .4s var(--ease)}
+.whats:hover span{max-width:200px}
+.whats::before{content:"";position:absolute;inset:0;border-radius:var(--r-full);border:2px solid #25d366;animation:pulso 2.2s infinite}
+@keyframes pulso{to{transform:scale(1.32);opacity:0}}
+
+/* revelar */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+/* ===== TABLET (8 colunas) ===== */
+@media (max-width:1023px){
+  .nav{position:relative}
+  .menu{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--verde-3);padding:var(--s2) var(--margem) var(--s6);visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;border-bottom:1px solid var(--linha)}
+  .menu.aberto{visibility:visible;opacity:1;transform:none}
+  .menu a:not(.btn){padding:var(--s4) 0;border-bottom:1px solid var(--linha);font-size:var(--t-corpo);line-height:var(--lh-corpo)}
+  .menu a:not(.btn)::after{display:none}
+  .menu .btn{margin-top:var(--s5);height:var(--s8)}
+  .burger{display:block}
+  header{background:rgba(var(--verde3-rgb),.94)}
+  .nav,header.solido .nav{height:var(--s10)}
+  .logo img,header.solido .logo img{height:var(--s6)}
+  .sec{padding:var(--s14) 0}
+  .hero{padding:calc(var(--s10) + var(--s10)) 0 var(--s14)}
+  .selo{left:calc(var(--s4) * -1)}
+  .jeito-img{position:relative;top:0;aspect-ratio:16/10}
+  .serv-lista,.painel{display:none!important}
+  .serv-mobile{display:block}
+  .trilha{grid-auto-columns:calc((100% - var(--gutter)) / 2)}
+  .c1 .citacao{font-size:48px;line-height:48px;margin-top:var(--s12)}
+  .ft-gigante{font-size:88px;line-height:80px}
+  .eq-foto{aspect-ratio:16/9}
+  .lider{grid-row:auto;min-height:0;aspect-ratio:16/10}
+}
+/* ===== MOBILE (4 colunas) ===== */
+@media (max-width:767px){
+  .sec{padding:var(--s12) 0}
+  .hero{padding:calc(var(--s10) + var(--s8)) 0 var(--s12)}
+  .hero .pontos{display:none}
+  .acoes .btn{width:100%}
+  .hero-foto .moldura,.hero-foto .bloco{border-radius:var(--s10) var(--r3) var(--r3) var(--r3)}
+  .hero-foto .bloco{inset:var(--s4) 0 0 var(--s4)}
+  .hero-foto .moldura{inset:0 var(--s4) var(--s4) 0}
+  .selo{width:96px;height:96px;left:calc(var(--s2) * -1);bottom:calc(var(--s4) * -1)}
+  .selo .num{font-size:24px;line-height:24px}
+  .selo .num small{font-size:8px;line-height:8px}
+  .flutua{display:none}
+  .aviso{height:auto;min-height:var(--s7)}
+  .aviso .wrap{padding-top:var(--s2);padding-bottom:var(--s2);font-size:var(--t-mini);line-height:var(--lh-mini)}
+  header.solido .aviso,html.aviso-fechado .aviso{min-height:0;height:0;padding:0}
+  html[data-tema]:not([data-tema="padrao"]):not(.aviso-fechado) .hero{padding-top:calc(var(--s10) + var(--s8) + var(--s8))}
+  .faixa span{font-size:16px;line-height:16px}
+  .faixa .trilho{height:var(--s8)}
+  .frase{font-size:20px;line-height:28px}
+  .missao{flex-direction:column;align-items:flex-start;padding:var(--s5)}
+  .missao .alvo{width:56px;height:56px}
+  .numeros{margin-top:var(--s10)}
+  .jeito-img .leg{font-size:28px;line-height:32px;left:var(--s5);right:var(--s5);bottom:var(--s5)}
+  .jeito-item{grid-template-columns:var(--s10) 1fr}
+  .jeito-item .n{font-size:32px;line-height:32px}
+  .pq-lista .t{font-size:20px;line-height:24px}
+  .pq-lista .in{padding:var(--s3) var(--s1);gap:var(--s3);min-height:var(--s12)}
+  .pq-lista .n{width:var(--s6);height:var(--s6);font-size:12px;line-height:16px}
+  .trilha{grid-auto-columns:calc(100% - var(--s8))}
+  .etapa{padding:var(--s5)}
+  .c1 .citacao{font-size:40px;line-height:40px;margin-top:var(--s10)}
+  .lider{grid-row:auto;min-height:0;aspect-ratio:4/5}
+  .pessoa .info{left:var(--s3);right:var(--s3);bottom:var(--s3)}
+  .pessoa h4{font-size:var(--t-peq);line-height:var(--lh-peq)}
+  .pessoa.cta{padding:var(--s4)}
+  .pessoa.cta .anton{font-size:24px;line-height:24px}
+  .historia .h2{font-size:40px;line-height:52px}
+  .pergunta{font-size:20px;line-height:28px;min-height:var(--s14)}
+  form{padding:var(--s6) var(--s4)}
+  .campos2{grid-template-columns:1fr}
+  .ft-gigante{font-size:48px;line-height:48px;margin-bottom:var(--s8)}
+  .historia .pontos,.servicos .pontos{display:none}
+  .canal strong{font-size:var(--t-peq);line-height:var(--lh-peq)}
+  .whats{right:var(--s4);bottom:var(--s4);height:var(--s8);min-width:var(--s8);padding:0 var(--s2)}
+  .whats .i{width:32px;height:32px}
+}
+@media (min-width:1024px) and (max-height:820px){
+  .servicos.sec{padding:var(--s5) 0}
+  .servicos .h2{font-size:48px;line-height:60px;margin-top:var(--s1)}
+  .servicos .cab{margin-bottom:var(--s4)}
+  .serv-btn{height:40px}
+  .serv-btn .nome{font-size:20px;line-height:24px}
+  .painel{padding:var(--s5)}
+  .painel .ic{width:var(--s7);height:var(--s7);margin-bottom:var(--s3)}
+  .painel .ic .i{width:20px;height:20px}
+  .painel h3{font-size:28px;line-height:32px}
+  .painel p{font-size:var(--t-peq);line-height:var(--lh-peq);margin-top:var(--s3)}
+  .painel .destaque,.painel .tags{margin-top:var(--s3)}
+  .painel .rodape{padding-top:var(--s4)}
+}
+@media (min-width:1600px){:root{--max:1440px}}
+
+/* ===== DESKTOP: cada seção cabe em uma tela ===== */
+@media (min-width:1024px){
+  .lider{min-height:0}
+  .pessoa{aspect-ratio:1/1}
+  .pessoa img{object-position:50% 20%}
+  .bento{grid-auto-rows:minmax(208px,auto)}
+}
+/* ===== DESKTOP (1366×768 até 1920×1080): cada seção cabe em uma tela ===== */
+@media (min-width:1024px) and (max-height:1000px){
+  :root{--t-display:72px;--lh-display:80px;--t-h2:56px;--lh-h2:64px;--t-num:40px;--t-lead:16px;--lh-lead:24px}
+  .sec{padding:var(--s8) 0}
+  .cab{margin-bottom:var(--s5)}
+  .h2{margin-top:var(--s2)}
+  /* hero */
+  .hero{padding:calc(var(--s10) + var(--s8)) 0 var(--s10)}
+  html[data-tema]:not([data-tema="padrao"]):not(.aviso-fechado) .hero{padding-top:calc(var(--s10) + var(--s8) + var(--s7))}
+  .hero .display{margin:0 0 var(--s4)}
+  .acoes{margin-top:var(--s5)}
+  .hero-foto{aspect-ratio:3/2}
+  .selo{width:112px;height:112px;bottom:var(--s8)}
+  .selo .num{font-size:28px;line-height:28px}
+  /* quem somos */
+  .quem{padding-top:var(--s12)}
+  .frase{font-size:24px;line-height:32px}
+  .quem .txt{margin-top:var(--s3);font-size:var(--t-peq);line-height:var(--lh-peq)}
+  .missao{margin-top:var(--s5);padding:var(--s4) var(--s5)}
+  .missao .alvo{width:56px;height:56px}
+  .missao p{font-size:var(--t-peq);line-height:var(--lh-peq)}
+  .numeros{margin-top:var(--s6);padding-top:var(--s4)}
+  .numero p{font-size:var(--t-mini);line-height:var(--lh-mini);margin-top:var(--s1)}
+  /* como atendemos */
+  .jeito-img{position:relative;top:0;aspect-ratio:auto;align-self:stretch}
+  .jeito-img img{position:absolute;inset:0}
+  .jeito-img .leg{font-size:32px;line-height:36px}
+  .jeito-lista{margin-top:var(--s4)}
+  .jeito-item{padding:var(--s1) 0;grid-template-columns:var(--s10) 1fr}
+  .jeito-item p{margin-top:0}
+  .jeito-item .n{font-size:32px;line-height:32px}
+  .jeito-item .h3{font-size:20px;line-height:24px}
+  .jeito-item p{font-size:var(--t-peq);line-height:var(--lh-peq);margin-top:var(--s1)}
+  /* quem atendemos */
+  .pq-foto{margin-top:var(--s5);aspect-ratio:16/10}
+  .pq-lista .in{min-height:var(--s10);padding:var(--s2) var(--s4)}
+  .pq-lista .t{font-size:24px;line-height:28px}
+  .pq-lista .n{width:var(--s6);height:var(--s6);font-size:12px;line-height:16px}
+  /* jornada */
+  .trilha{margin-top:var(--s4)}
+  .etapa ul{gap:var(--s1)}
+  .etapa{padding:var(--s5)}
+  .etapa .n{font-size:48px;line-height:48px}
+  .etapa h3{font-size:20px;line-height:24px;margin:var(--s3) 0}
+  .etapa .gratis{top:var(--s5);right:var(--s5)}
+  /* diferenciais */
+  .bento{grid-auto-rows:minmax(152px,auto)}
+  .cel{padding:var(--s5)}
+  .cel .ic{top:var(--s5);left:var(--s5);width:var(--s7);height:var(--s7)}
+  .cel .h3{font-size:20px;line-height:24px}
+  .cel p{font-size:var(--t-peq);line-height:var(--lh-peq);margin-top:var(--s1)}
+  .c1 .citacao{font-size:40px;line-height:44px;margin-top:var(--s8)}
+  .c2,.c3,.c4,.c5{padding-top:var(--s10)}
+  .cel .ic{width:var(--s6);height:var(--s6)}
+  .cel .ic .i{width:16px;height:16px}
+  /* equipe */
+  .pessoa{aspect-ratio:16/10}
+  .equipe.sec,.jeito.sec{padding:var(--s7) 0}
+  .pessoa h4{font-size:var(--t-peq);line-height:var(--lh-peq)}
+  .pessoa .info span{max-height:0;opacity:0;overflow:hidden;margin:0;transition:max-height .3s var(--ease),opacity .3s,margin .3s}
+  .pessoa:hover .info span,.pessoa:focus-within .info span{max-height:var(--s8);opacity:.9;margin-top:var(--s1)}
+  .pessoa img{object-position:50% 16%}
+  .lider h3{font-size:24px;line-height:28px;margin:var(--s2) 0 0}
+  .lider p{display:none}
+  .lider .big{font-size:32px;line-height:32px;margin-top:var(--s2);display:flex;align-items:baseline;gap:var(--s2)}
+  .lider .big small{margin:0}
+  .lider img{object-position:50% 8%}
+  .lider::after{background:linear-gradient(180deg,transparent 45%,rgba(var(--verde3-rgb),.7) 65%,rgba(var(--verde3-rgb),.96))}
+  /* próximo passo */
+  .historia .h2{font-size:56px;line-height:68px}
+  .pergunta{margin-top:var(--s5);font-size:20px;line-height:28px;min-height:var(--s7)}
+  /* contato */
+  .canais{margin-top:var(--s5);gap:var(--s1)}
+  .canal{min-height:var(--s7);padding:var(--s1) var(--s3);gap:var(--s3)}
+  .canal small{display:none}
+  .canal .ic{width:var(--s6);height:var(--s6)}
+  .canal .ic .i{width:16px;height:16px}
+  .canal strong{font-size:var(--t-peq);line-height:var(--lh-peq)}
+  .mapa{height:128px;margin-top:var(--s2)}
+  form{padding:var(--s5);gap:var(--s3)}
+  form h3{font-size:28px;line-height:32px}
+  form>p{margin-top:calc(var(--s2) * -1);font-size:var(--t-peq);line-height:var(--lh-peq)}
+  textarea{min-height:var(--s12)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .hero .display .linha>span{transform:none}
+  .frase .w{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<!-- sprite de ícones (todos em grade 24px) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-seta-esq" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-fita" viewBox="0 0 24 24"><path d="M12 3c-2 0-3.5 1.6-3.5 3.6 0 1.6.9 3.2 1.9 4.7L6 18.5l2.5 2.5 3.5-5.6 3.5 5.6 2.5-2.5-4.4-7.2c1-1.5 1.9-3.1 1.9-4.7C15.5 4.6 14 3 12 3z"/></symbol>
+    <symbol id="i-predio" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-6 7 6v11M10 21v-5h4v5"/></symbol>
+    <symbol id="i-grafico" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></symbol>
+    <symbol id="i-olho" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></symbol>
+    <symbol id="i-balao" viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></symbol>
+    <symbol id="i-email" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-whats" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.6-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></symbol>
+    <symbol id="i-lupa" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></symbol>
+    <symbol id="i-livro" viewBox="0 0 24 24"><path d="M4 4h12a4 4 0 014 4v12H8a4 4 0 01-4-4z"/><path d="M8 9h8M8 13h6"/></symbol>
+    <symbol id="i-chave" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3M12 14v3"/></symbol>
+    <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-pessoas" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.5a3.5 3.5 0 010 7M18.5 14.8c1.7.8 2.7 2.5 3 5.2"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></symbol>
+    <symbol id="i-obra" viewBox="0 0 24 24"><path d="M2 20h20M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="i-publico" viewBox="0 0 24 24"><path d="M3 21h18M4 10h16M6 10v8M10 10v8M14 10v8M18 10v8M12 3l9 5H3z"/></symbol>
+  </defs>
+</svg>
+
+<div class="overlay-grade" aria-hidden="true"><div class="wrap"><div class="grid" id="gradeCols"></div></div></div>
+
+<!-- HEADER -->
+<header id="topo">
+  <div class="aviso" id="campanha" role="note"><div class="wrap"><svg class="i i20 fino" aria-hidden="true"><use href="#i-fita"/></svg><span id="campanhaTxt"></span><button class="fechar" id="fecharAviso" aria-label="Fechar aviso"><svg class="i fino"><use href="#i-x"/></svg></button></div></div>
+  <div class="wrap nav">
+    <a href="#inicio" class="logo" aria-label="D&amp;M Contabilidade, início"><img src="img/logo-dm.png" data-logo alt="D&amp;M Contabilidade"></a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#quem-somos">Quem somos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#jornada">Como trabalhamos</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#contato">Contato</a>
+      <a href="https://wa.me/5549985031923?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener" class="btn b-laranja">Diagnóstico gratuito</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="padrao"></div>
+  <div class="pontos"></div>
+  <div class="wrap">
+    <div class="grid">
+      <div style="--d:7;--t:8">
+        <h1 class="display">
+          <span class="linha"><span>Contabilidade</span></span>
+          <span class="linha"><span>com visão de</span></span>
+          <span class="linha"><span><span class="tarja t-laranja">negócio</span></span></span>
+        </h1>
+        <p class="lead">Gestão contábil, fiscal e trabalhista com <b>atendimento próximo</b> e orientação estratégica, para que suas decisões sejam baseadas em números confiáveis.</p>
+        <div class="acoes">
+          <a href="https://wa.me/5549985031923?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener" class="btn b-laranja"><svg class="i"><use href="#i-seta"/></svg>Agendar diagnóstico gratuito</a>
+          <a href="#servicos" class="btn b-linha">Conhecer serviços</a>
+        </div>
+      </div>
+      <div style="--ds:9;--d:8;--t:8">
+        <div class="hero-foto">
+          <div class="bloco"></div>
+          <div class="moldura"><img src="img/equipe-2.jpg" alt="Equipe da D&amp;M Contabilidade reunida no escritório"></div>
+          <div class="selo" aria-label="Mais de 26 anos de experiência">
+            <svg viewBox="0 0 150 150" aria-hidden="true"><defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text textLength="360" lengthAdjust="spacing"><textPath href="#circ" textLength="360" lengthAdjust="spacing">D&amp;M Contabilidade • Bom Retiro • SC •</textPath></text></svg>
+            <div class="num">26+<small>anos de<br>experiência</small></div>
+          </div>
+          <div class="flutua"><div class="anton">Até 70%</div><p>de economia no INSS na regularização de obras</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="faixa" aria-hidden="true">
+  <div class="trilho" id="trilho"><span>Abertura de empresas</span><span>Contabilidade consultiva</span><span>Escrituração fiscal e contábil</span><span>Planejamento tributário</span><span>Departamento pessoal</span><span>Certificação digital</span><span>Imposto de renda</span><span>Regularização de obras</span><span>Contabilidade pública</span></div>
+</div>
+
+<!-- QUEM SOMOS -->
+<section class="sec claro quem" id="quem-somos">
+  <div class="wrap">
+    <div class="grid">
+      <div class="rv" style="--d:5;--t:8">
+        <span class="eyebrow">Quem somos</span>
+        <h2 class="h2">Além das<br><span class="tarja t-laranja">obrigações</span><br>fiscais</h2>
+      </div>
+      <div style="--ds:7;--d:10;--t:8">
+        <p class="frase" id="frase">A D&amp;M Contabilidade acompanha empresas e profissionais <em>da abertura à expansão,</em> com soluções contábeis ajustadas à realidade de cada negócio.</p>
+        <p class="txt rv">Nossa equipe une conhecimento técnico e atendimento próximo, para que cada cliente compreenda seus resultados e decida com segurança.</p>
+        <div class="missao rv">
+          <svg class="alvo" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="44" style="fill:var(--laranja)"/><circle cx="50" cy="50" r="33" fill="#fff"/><circle cx="50" cy="50" r="22" style="fill:var(--laranja)"/><circle cx="50" cy="50" r="11" fill="#fff"/>
+            <path d="M50 50 L86 14" style="stroke:var(--verde-3)" stroke-width="5" stroke-linecap="round"/><path d="M80 8 l10 0 0 10 -6 0 0 -4 -4 0z" style="fill:var(--verde-3)"/>
+          </svg>
+          <div>
+            <h3>Nossa <span>missão</span></h3>
+            <p>Conectar contabilidade e estratégia para simplificar decisões e impulsionar resultados, com soluções acessíveis, transparentes e voltadas ao crescimento sustentável.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid numeros">
+      <div class="numero rv" style="--d:4;--t:4;--m:2"><div class="anton"><span class="cont" data-alvo="26">0</span><sup>+</sup></div><p>anos de experiência nos setores privado e público</p></div>
+      <div class="numero rv d1" style="--d:4;--t:4;--m:2"><div class="anton"><span class="cont" data-alvo="10">0</span></div><p>áreas de atuação</p></div>
+      <div class="numero rv d2" style="--d:4;--t:4;--m:2"><div class="anton"><span class="cont" data-alvo="8">0</span></div><p>profissionais na equipe</p></div>
+      <div class="numero rv d3" style="--d:4;--t:4;--m:2"><div class="anton"><small>até </small><span class="cont" data-alvo="70">0</span><sup>%</sup></div><p>de economia no INSS em regularização de obras</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO ATENDEMOS -->
+<section class="sec jeito" id="jeito">
+  <div class="wrap">
+    <div class="grid" style="row-gap:var(--s8)">
+      <div class="jeito-img rv" style="--d:7;--t:8">
+        <img src="img/maos.jpg" alt="Mãos unidas simbolizando parceria" loading="lazy">
+        <div class="leg anton">Compromisso<br>de <span class="tarja t-laranja">longo prazo</span></div>
+      </div>
+      <div style="--ds:9;--d:8;--t:8">
+        <span class="eyebrow">Como atendemos</span>
+        <h2 class="h2">Claro, próximo<br>e <span class="tarja t-laranja">proativo</span></h2>
+        <div class="jeito-lista">
+          <div class="jeito-item rv"><span class="n">01</span><div><h3 class="h3">Comunicação objetiva</h3><p>Traduzimos informações técnicas em orientações práticas.</p></div></div>
+          <div class="jeito-item rv"><span class="n">02</span><div><h3 class="h3">Atendimento personalizado</h3><p>Soluções compatíveis com o porte, o segmento e o momento de cada empresa.</p></div></div>
+          <div class="jeito-item rv"><span class="n">03</span><div><h3 class="h3">Processos digitais</h3><p>Rotinas automatizadas e informações organizadas, com menos burocracia no dia a dia.</p></div></div>
+          <div class="jeito-item rv"><span class="n">04</span><div><h3 class="h3">Postura preventiva</h3><p>Alertas e orientações antecipados, antes que uma pendência se torne um problema.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="sec servicos" id="servicos">
+  <div class="wrap">
+    <div class="grid cab">
+      <div class="rv" style="--d:8;--t:8">
+        <span class="eyebrow">Serviços</span>
+        <h2 class="h2" style="color:var(--verde)">Áreas de <span class="tarja t-laranja">atuação</span></h2>
+      </div>
+      <p class="sub rv d1" style="--ds:10;--d:7;--t:8">Atendimento completo nas áreas contábil, fiscal, trabalhista, societária e pública. Selecione um serviço para ver os detalhes.</p>
+    </div>
+    <div class="grid">
+      <ul class="serv-lista" role="tablist" aria-label="Serviços" id="servLista" style="--d:8"></ul>
+      <div class="painel" id="painel" role="tabpanel" aria-live="polite" style="--ds:10;--d:7"></div>
+      <div class="serv-mobile" id="servMobile" style="--t:8"></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM ATENDEMOS -->
+<section class="sec paraquem" id="para-quem">
+  <div class="pontos"></div>
+  <div class="wrap">
+    <div class="grid" style="row-gap:var(--s8)">
+      <div class="rv" style="--d:6;--t:8">
+        <span class="eyebrow">Clientes</span>
+        <h2 class="h2">Quem<br><span class="tarja t-verde">atendemos</span></h2>
+        <div class="pq-foto"><img src="img/equipe-3.jpg" alt="Equipe D&amp;M Contabilidade" loading="lazy"></div>
+      </div>
+      <ul class="pq-lista" style="--ds:8;--d:9;--t:8">
+        <li class="rv"><div class="in"><span class="n">1</span><span class="t">Profissionais liberais e autônomos</span><svg class="i"><use href="#i-seta"/></svg></div></li>
+        <li class="rv d1"><div class="in"><span class="n">2</span><span class="t">Prestadores de serviços</span><svg class="i"><use href="#i-seta"/></svg></div></li>
+        <li class="rv d2"><div class="in"><span class="n">3</span><span class="t">Pequenas e médias empresas</span><svg class="i"><use href="#i-seta"/></svg></div></li>
+        <li class="rv d3"><div class="in"><span class="n">4</span><span class="t">Startups e negócios digitais</span><svg class="i"><use href="#i-seta"/></svg></div></li>
+        <li class="rv d3"><div class="in"><span class="n">5</span><span class="t">Empresas do Lucro Real e Presumido</span><svg class="i"><use href="#i-seta"/></svg></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- JORNADA -->
+<section class="sec escuro jornada" id="jornada">
+  <div class="padrao"></div>
+  <div class="wrap" style="position:relative">
+    <div class="grid cab">
+      <div class="rv" style="--d:10;--t:6;--m:4">
+        <span class="eyebrow">Como funciona</span>
+        <h2 class="h2">Etapas do<br><span class="tarja t-laranja">atendimento</span></h2>
+      </div>
+      <div class="jor-nav" style="--ds:13;--d:4;--ts:7;--t:2;--m:4">
+        <button id="jorAnt" aria-label="Etapa anterior"><svg class="i"><use href="#i-seta-esq"/></svg></button>
+        <button id="jorProx" aria-label="Próxima etapa"><svg class="i"><use href="#i-seta"/></svg></button>
+      </div>
+    </div>
+    <div class="progresso"><i id="barra"></i></div>
+    <div class="trilha" id="trilha">
+      <article class="etapa"><span class="gratis">Gratuito</span><div class="n">01</div><h3>Diagnóstico inicial</h3><ul><li>Análise gratuita da situação atual</li><li>Proposta de serviços conforme o perfil do negócio</li><li>Orientações iniciais</li></ul></article>
+      <article class="etapa"><div class="n">02</div><h3>Abertura ou migração</h3><ul><li>Formalização da empresa</li><li>Assessoria contábil e fiscal na fase inicial</li><li>Transferência organizada de outro escritório</li></ul></article>
+      <article class="etapa"><div class="n">03</div><h3>Integração</h3><ul><li>Apresentação dos canais de atendimento</li><li>Levantamento de documentos e informações</li><li>Configuração de sistemas e rotinas</li></ul></article>
+      <article class="etapa"><div class="n">04</div><h3>Acompanhamento mensal</h3><ul><li>Obrigações fiscais, contábeis e trabalhistas em dia</li><li>Relatórios e reuniões periódicas</li><li>Suporte para dúvidas do dia a dia</li></ul></article>
+      <article class="etapa"><div class="n">05</div><h3>Planejamento estratégico</h3><ul><li>Planejamento tributário contínuo</li><li>Estudos de viabilidade e reorganização societária</li></ul></article>
+      <article class="etapa"><div class="n">06</div><h3>Melhoria contínua</h3><ul><li>Revisão periódica de processos</li><li>Atualização sobre mudanças na legislação</li><li>Sugestões de melhoria para o negócio</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="sec claro" id="por-que">
+  <div class="wrap">
+    <div class="grid cab">
+      <div class="rv" style="--d:8;--t:8">
+        <span class="eyebrow">Diferenciais</span>
+        <h2 class="h2">Por que a <span class="tarja t-laranja">D&amp;M</span></h2>
+      </div>
+    </div>
+    <div class="grid bento">
+      <div class="cel c1 rv" style="--d:6;--t:8">
+        <div class="ic"><svg class="i"><use href="#i-predio"/></svg></div>
+        <div class="citacao">Da abertura<br>à <span>expansão</span></div>
+        <h3 class="h3">Foco em pequenas e médias empresas</h3>
+        <p>Experiência com negócios em todas as fases de desenvolvimento.</p>
+      </div>
+      <div class="cel c2 rv d1" style="--d:5;--t:4">
+        <div class="ic"><svg class="i"><use href="#i-grafico"/></svg></div>
+        <h3 class="h3">Visão estratégica</h3>
+        <p>Planejamento e economia tributária como apoio às decisões de gestão.</p>
+      </div>
+      <div class="cel c3 rv d2" style="--d:5;--t:4">
+        <div class="ic"><svg class="i"><use href="#i-olho"/></svg></div>
+        <h3 class="h3">Transparência</h3>
+        <p>O cliente acompanha o que está sendo feito em cada etapa e por quê.</p>
+      </div>
+      <div class="cel c4 rv" style="--d:5;--t:4">
+        <div class="ic"><svg class="i"><use href="#i-sol"/></svg></div>
+        <h3 class="h3">Resultados de longo prazo</h3>
+        <p>Decisões tomadas hoje com atenção ao futuro da empresa.</p>
+      </div>
+      <div class="cel c5 rv d1" style="--d:5;--t:4">
+        <div class="ic"><svg class="i"><use href="#i-balao"/></svg></div>
+        <h3 class="h3">Atendimento ágil</h3>
+        <p>Suporte constante de uma equipe que conhece a rotina de cada cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="sec equipe" id="equipe">
+  <div class="wrap">
+    <div class="grid cab">
+      <div class="rv" style="--d:8;--t:8">
+        <span class="eyebrow">Nossa equipe</span>
+        <h2 class="h2">Profissionais<br><span class="tarja t-laranja">especializados</span></h2>
+      </div>
+      <p class="sub rv d1" style="--ds:10;--d:7;--t:8">Equipe multidisciplinar com atuação nas áreas contábil, fiscal, trabalhista, societária e pública.</p>
+    </div>
+    <div class="grid eq-grid">
+      <article class="lider rv" style="--d:4;--t:8">
+        <img src="img/neiva.jpg" alt="Neiva Regina Deinani Moretti" loading="lazy">
+        <div class="txt">
+          <span class="cargo">Contadora · Proprietária e CEO</span>
+          <h3>Neiva Regina Deinani Moretti</h3>
+          <p>Atuação em contabilidade privada e administração pública</p>
+          <div class="big">26+<small>anos de experiência</small></div>
+        </div>
+      </article>
+      <article class="pessoa rv d1" style="--d:3;--t:4;--m:2"><img src="img/alison.jpg" alt="Alison Vinicius Moretti" loading="lazy"><div class="info"><h4>Alison Vinicius Moretti</h4><span>Contador · Gerente Geral</span></div></article>
+      <article class="pessoa rv d2" style="--d:3;--t:4;--m:2"><img src="img/donizete.jpg" alt="Donizete Lins" loading="lazy"><div class="info"><h4>Donizete Lins</h4><span>Departamento Societário e Regularização de Obras</span></div></article>
+      <article class="pessoa rv d1" style="--d:3;--t:4;--m:2"><img src="img/fabricio.jpg" alt="Fabrício Gabriel da Cruz" loading="lazy"><div class="info"><h4>Fabrício Gabriel da Cruz</h4><span>Analista de Escrita Fiscal</span></div></article>
+      <article class="pessoa rv d2" style="--d:3;--t:4;--m:2"><img src="img/jessica.jpg" alt="Jéssica Sangaletti Moretti" loading="lazy"><div class="info"><h4>Jéssica Sangaletti Moretti</h4><span>Analista de Escrita Fiscal</span></div></article>
+      <article class="pessoa rv" style="--d:3;--t:4;--m:2"><img src="img/mateus.jpg" alt="Mateus Zanini da Silva" loading="lazy"><div class="info"><h4>Mateus Zanini da Silva</h4><span>Analista de Escrita Fiscal e Contábil</span></div></article>
+      <article class="pessoa rv d1" style="--d:3;--t:4;--m:2"><img src="img/darla.jpg" alt="Darla Cristine" loading="lazy"><div class="info"><h4>Darla Cristine</h4><span>Departamento Pessoal</span></div></article>
+      <article class="pessoa rv d2" style="--d:3;--t:4;--m:2"><img src="img/lais.jpg" alt="Lais Cardoso" loading="lazy"><div class="info"><h4>Lais Cardoso</h4><span>Contínuo e Social Media</span></div></article>
+      <a href="#contato" class="pessoa cta rv d3" style="--d:3;--t:4;--m:2"><div><div class="anton">Agende uma reunião</div><span class="ver">Contato <svg class="i i20"><use href="#i-seta"/></svg></span></div></a>
+    </div>
+    <div class="eq-foto rv">
+      <img src="img/equipe.jpg" alt="Equipe completa da D&amp;M Contabilidade" loading="lazy">
+      <div class="tag">Equipe <b>D&amp;M Contabilidade</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMO PASSO -->
+<section class="sec escuro historia" id="historia">
+  <div class="padrao"></div>
+  <div class="pontos p1"></div><div class="pontos p2"></div>
+  <div class="wrap" style="position:relative">
+    <div class="grid">
+      <div style="--ds:3;--d:12;--t:8">
+        <span class="eyebrow">Próximo passo</span>
+        <h2 class="h2 rv">Queremos fazer<br>parte da <span class="tarja t-laranja">sua história</span></h2>
+        <p class="lead rv d1">Cada cliente representa um projeto em construção. Nosso compromisso é acompanhá-lo com suporte técnico, transparência e visão de longo prazo.</p>
+        <p class="pergunta" aria-live="polite"><span id="digita"></span><span class="cursor"></span></p>
+        <div class="acoes rv d2">
+          <a href="https://wa.me/5549985031923?text=Ol%C3%A1!%20Quero%20conversar%20com%20a%20D%26M%20Contabilidade." target="_blank" rel="noopener" class="btn b-laranja"><svg class="i cheio"><use href="#i-whats"/></svg>Chamar no WhatsApp</a>
+          <a href="#contato" class="btn b-linha">Formulário de contato</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="sec claro" id="contato">
+  <div class="wrap">
+    <div class="grid" style="row-gap:var(--s10)">
+      <div style="--d:7;--t:8">
+        <span class="eyebrow rv">Contato</span>
+        <h2 class="h2 rv">Fale <span class="tarja t-laranja">conosco</span></h2>
+        <div class="canais">
+          <a class="canal rv" href="https://wa.me/5549985031923" target="_blank" rel="noopener"><span class="ic"><svg class="i cheio"><use href="#i-whats"/></svg></span><span><small>WhatsApp</small><strong>(49) 98503-1923</strong></span></a>
+          <a class="canal rv" href="tel:+554932770903"><span class="ic"><svg class="i"><use href="#i-tel"/></svg></span><span><small>Telefone</small><strong>(49) 3277-0903</strong></span></a>
+          <a class="canal rv" href="mailto:demescritoriocontabil@gmail.com"><span class="ic"><svg class="i"><use href="#i-email"/></svg></span><span><small>E-mail</small><strong>demescritoriocontabil@gmail.com</strong></span></a>
+          <a class="canal rv" href="https://www.instagram.com/neivamoretticontabilidade/" target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-insta"/></svg></span><span><small>Instagram</small><strong>@neivamoretticontabilidade</strong></span></a>
+          <a class="canal rv" href="https://www.google.com/maps/search/?api=1&query=Rua+Anita+Garibaldi+65+Centro+Bom+Retiro+SC" target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-pin"/></svg></span><span><small>Endereço</small><strong>Rua Anita Garibaldi, 65 · Sala II · Centro · Bom Retiro · SC</strong></span></a>
+        </div>
+        <div class="mapa rv">
+          <iframe title="Mapa: D&amp;M Contabilidade em Bom Retiro, SC" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua+Anita+Garibaldi,+65,+Centro,+Bom+Retiro+-+SC&output=embed"></iframe>
+        </div>
+      </div>
+      <form id="form" class="rv d1" novalidate style="--ds:9;--d:8;--t:8">
+        <div class="padrao"></div>
+        <h3>Solicite um <span>diagnóstico gratuito</span></h3>
+        <p>Preencha os campos abaixo. A mensagem será enviada ao nosso WhatsApp.</p>
+        <div class="campos2">
+          <div><label for="nome">Nome</label><input id="nome" name="nome" required placeholder="Seu nome" autocomplete="name"></div>
+          <div><label for="empresa">Empresa</label><input id="empresa" name="empresa" placeholder="Opcional" autocomplete="organization"></div>
+        </div>
+        <div><label for="servico">Serviço de interesse</label><select id="servico" name="servico"></select></div>
+        <div><label for="msg">Mensagem</label><textarea id="msg" name="msg" placeholder="Descreva brevemente sua necessidade"></textarea></div>
+        <button type="submit" class="btn b-laranja"><svg class="i cheio"><use href="#i-whats"/></svg>Enviar pelo WhatsApp</button>
+        <p class="obs">Atendimento de segunda a sexta, em horário comercial.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="wrap">
+    <div class="grid ft-grid">
+      <div style="--d:5;--t:8">
+        <img src="img/logo-dm.png" data-logo alt="D&amp;M Contabilidade">
+        <p>Assessoria contábil, fiscal e trabalhista para empresas e profissionais.</p>
+      </div>
+      <div style="--ds:7;--d:3;--t:4;--m:2">
+        <h5>Navegação</h5>
+        <ul><li><a href="#quem-somos">Quem somos</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#jornada">Como trabalhamos</a></li><li><a href="#equipe">Equipe</a></li><li><a href="#contato">Contato</a></li></ul>
+      </div>
+      <div style="--d:3;--t:4;--m:2">
+        <h5>Serviços</h5>
+        <ul><li><a href="#servicos">Abertura de empresas</a></li><li><a href="#servicos">Planejamento tributário</a></li><li><a href="#servicos">Departamento pessoal</a></li><li><a href="#servicos">Regularização de obras</a></li><li><a href="#servicos">Contabilidade pública</a></li></ul>
+      </div>
+      <div style="--d:4;--t:8">
+        <h5>Contato</h5>
+        <ul><li><a href="https://wa.me/5549985031923" target="_blank" rel="noopener">(49) 98503-1923</a></li><li><a href="tel:+554932770903">(49) 3277-0903</a></li><li><a href="mailto:demescritoriocontabil@gmail.com">demescritoriocontabil@gmail.com</a></li><li>Rua Anita Garibaldi, 65 · Sala II<br>Centro · Bom Retiro · SC</li></ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="ano">2026</span> D&amp;M Contabilidade · CNPJ 19.662.763/0001-26 · Todos os direitos reservados.</span>
+      <span>Site desenvolvido por <b class="ctech">CTech Sistemas</b></span>
+      <a href="#inicio" class="topo">Voltar ao topo <svg class="i i16"><use href="#i-cima"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<a class="whats" href="https://wa.me/5549985031923?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20D%26M." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg class="i cheio"><use href="#i-whats"/></svg><span>Fale com a gente</span></a>
+
+<script>
+(function(){
+  const WHATS='5549985031923';
+  const reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ic=(id,cls)=>'<svg class="i '+(cls||'')+'"><use href="#i-'+id+'"/></svg>';
+
+  /* ---------- serviços ---------- */
+  const S=[
+    {n:'Abertura de empresas',ic:'predio',d:'Condução de todo o processo de formalização, da definição da estrutura jurídica ao registro do CNPJ.',tags:['Estrutura jurídica','Enquadramento tributário','Registro']},
+    {n:'Contabilidade consultiva',ic:'lupa',d:'Interpretação dos números da empresa para apoiar decisões de gestão e investimento.',tags:['Análise de resultados','Apoio à gestão']},
+    {n:'Escrituração fiscal e contábil',ic:'livro',d:'Registro das operações e entrega das obrigações acessórias em conformidade com a legislação.',tags:['Obrigações acessórias','Conformidade']},
+    {n:'Certificação digital',ic:'chave',d:'Emissão e renovação de certificados digitais para pessoas físicas e jurídicas.',tags:['Emissão','Renovação']},
+    {n:'Planejamento tributário',ic:'grafico',d:'Análise do regime e das operações para reduzir a carga tributária dentro da legislação.',tags:['Redução de impostos','Escolha do regime']},
+    {n:'Consultoria e regularização empresarial',ic:'escudo',d:'Diagnóstico e solução de pendências fiscais, tributárias e legais.',tags:['Pendências fiscais','Regularização']},
+    {n:'Folha de pagamento e departamento pessoal',ic:'pessoas',d:'Gestão completa da folha: admissões, rescisões, férias, encargos sociais e obrigações trabalhistas.',tags:['Folha','Admissões e rescisões','eSocial']},
+    {n:'Imposto de Renda PF e PJ',ic:'doc',d:'Elaboração e revisão de declarações, com foco na redução de riscos junto à Receita Federal.',tags:['Pessoa física','Pessoa jurídica']},
+    {n:'Regularização de obras (CEI / Obra no INSS)',ic:'obra',d:'Regularização completa da obra junto ao INSS, com redução legal do valor devido.',destaque:['Até 70%','de economia no INSS'],tags:['CEI','Obra no INSS']},
+    {n:'Contabilidade e administração pública',ic:'publico',d:'Documentação para licitações, análise de editais, pedidos de reequilíbrio (Lei 14.133/2021), orçamentos e planejamento municipal, empenhos, liquidações e pagamentos.',tags:['Licitações','Lei 14.133/2021','Execução orçamentária']}
+  ];
+  const pad=i=>String(i+1).padStart(2,'0');
+  const lista=document.getElementById('servLista'),painel=document.getElementById('painel'),mob=document.getElementById('servMobile');
+  S.forEach((s,i)=>{
+    const li=document.createElement('li');li.setAttribute('role','presentation');
+    li.innerHTML='<button class="serv-btn" role="tab" id="tab'+i+'" aria-selected="'+(i===0)+'" aria-controls="painel"><span class="n">'+pad(i)+'</span><span class="nome">'+s.n+'</span><span class="seta">'+ic('seta')+'</span></button>';
+    lista.appendChild(li);
+    const d=document.createElement('details');d.className='acc';if(i===0)d.open=true;
+    d.innerHTML='<summary><span class="n">'+pad(i)+'</span><span class="nome">'+s.n+'</span><span class="mais">'+ic('mais')+'</span></summary><div class="corpo">'+s.d+(s.destaque?' <b>'+s.destaque[0]+' '+s.destaque[1]+'.</b>':'')+'</div>';
+    mob.appendChild(d);
+  });
+  function mostra(i){
+    const s=S[i];
+    lista.querySelectorAll('.serv-btn').forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+    painel.setAttribute('aria-labelledby','tab'+i);
+    painel.innerHTML='<div class="padrao"></div><div class="bignum">'+pad(i)+'</div><div class="anim"><div class="ic">'+ic(s.ic)+'</div><h3>'+s.n+'</h3><p>'+s.d+'</p>'+
+      (s.destaque?'<div class="destaque"><b>'+s.destaque[0]+'</b>'+s.destaque[1]+'</div>':'')+
+      '<div class="tags">'+s.tags.map(t=>'<span>'+t+'</span>').join('')+'</div>'+
+      '<div class="rodape"><a class="btn b-laranja" target="_blank" rel="noopener" href="https://wa.me/'+WHATS+'?text='+encodeURIComponent('Olá! Gostaria de informações sobre: '+s.n+'.')+'">Solicitar informações'+ic('seta')+'</a></div></div>';
+  }
+  const idx=b=>[...lista.querySelectorAll('.serv-btn')].indexOf(b);
+  lista.addEventListener('click',e=>{const b=e.target.closest('.serv-btn');if(b)mostra(idx(b));});
+  lista.addEventListener('mouseover',e=>{const b=e.target.closest('.serv-btn');if(b&&matchMedia('(hover:hover)').matches)mostra(idx(b));});
+  lista.addEventListener('keydown',e=>{
+    const bs=[...lista.querySelectorAll('.serv-btn')],i=bs.indexOf(document.activeElement);if(i<0)return;
+    let j=null;if(e.key==='ArrowDown')j=(i+1)%bs.length;if(e.key==='ArrowUp')j=(i-1+bs.length)%bs.length;
+    if(j!==null){e.preventDefault();bs[j].focus();mostra(j);}
+  });
+  mostra(0);
+  const sel=document.getElementById('servico');
+  ['Preciso de orientação',...S.map(s=>s.n)].forEach(n=>{const o=document.createElement('option');o.textContent=n;sel.appendChild(o);});
+
+  /* ---------- faixa ---------- */
+  const tr=document.getElementById('trilho');tr.innerHTML+=tr.innerHTML;
+
+  /* ---------- header e menu ---------- */
+  const hd=document.getElementById('topo');
+  const onScroll=()=>hd.classList.toggle('solido',scrollY>40);onScroll();addEventListener('scroll',onScroll,{passive:true});
+  const bg=document.getElementById('burger'),mn=document.getElementById('menu');
+  const fecha=()=>{mn.classList.remove('aberto');bg.classList.remove('x');bg.setAttribute('aria-expanded',false);};
+  bg.addEventListener('click',()=>{const a=mn.classList.toggle('aberto');bg.classList.toggle('x',a);bg.setAttribute('aria-expanded',a);});
+  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',fecha));
+  addEventListener('keydown',e=>{if(e.key==='Escape')fecha();});
+
+  /* ---------- revelar e contadores ---------- */
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.15});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  const ioc=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;ioc.unobserve(e.target);
+    const el=e.target,alvo=+el.dataset.alvo;if(reduz){el.textContent=alvo;return;}
+    const t0=performance.now(),dur=1600;
+    (function f(t){const p=Math.min((t-t0)/dur,1);el.textContent=Math.round(alvo*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f);})(t0);
+  }),{threshold:.6});
+  document.querySelectorAll('.cont').forEach(el=>ioc.observe(el));
+
+  /* ---------- frase que acende ---------- */
+  const fr=document.getElementById('frase');
+  (function quebra(node){
+    [...node.childNodes].forEach(n=>{
+      if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(p=>{if(!p.trim()){f.appendChild(document.createTextNode(p));return;}const s=document.createElement('span');s.className='w';s.textContent=p;f.appendChild(s);});n.replaceWith(f);}
+      else if(n.nodeType===1)quebra(n);
+    });
+  })(fr);
+  const ws=fr.querySelectorAll('.w');
+  function acende(){const r=fr.getBoundingClientRect(),vh=innerHeight;const p=Math.min(Math.max((vh*.85-r.top)/(r.height+vh*.35),0),1);const k=Math.round(p*ws.length);ws.forEach((w,i)=>w.classList.toggle('on',i<k));}
+  if(reduz)ws.forEach(w=>w.classList.add('on'));else{acende();addEventListener('scroll',acende,{passive:true});}
+
+  /* ---------- jornada ---------- */
+  const tl=document.getElementById('trilha'),bar=document.getElementById('barra');
+  const passo=()=>tl.querySelector('.etapa').offsetWidth+16;
+  document.getElementById('jorProx').onclick=()=>tl.scrollBy({left:passo(),behavior:'smooth'});
+  document.getElementById('jorAnt').onclick=()=>tl.scrollBy({left:-passo(),behavior:'smooth'});
+  const prog=()=>{const m=tl.scrollWidth-tl.clientWidth;bar.style.width=(m>0?Math.max(tl.scrollLeft/m,.08)*100:100)+'%';};
+  tl.addEventListener('scroll',prog,{passive:true});prog();addEventListener('resize',prog);
+  let dx=null,sl=0;
+  tl.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dx=e.clientX;sl=tl.scrollLeft;tl.classList.add('arrastando');});
+  addEventListener('pointermove',e=>{if(dx===null)return;tl.scrollLeft=sl-(e.clientX-dx);});
+  addEventListener('pointerup',()=>{if(dx===null)return;dx=null;tl.classList.remove('arrastando');});
+
+  /* ---------- perguntas ---------- */
+  const Q=['Precisa tirar uma ideia do papel?','Quer mais organização e clareza nos números?','Busca uma contabilidade que fala a sua língua?'];
+  const alvo=document.getElementById('digita');
+  if(reduz){alvo.textContent=Q[2];}else{
+    let qi=0,ci=0,apaga=false;
+    (function tick(){const q=Q[qi];
+      if(!apaga){ci++;alvo.textContent=q.slice(0,ci);if(ci===q.length){apaga=true;return setTimeout(tick,2200);}}
+      else{ci--;alvo.textContent=q.slice(0,ci);if(ci===0){apaga=false;qi=(qi+1)%Q.length;}}
+      setTimeout(tick,apaga?24:48);
+    })();
+  }
+
+  /* ---------- formulário -> WhatsApp ---------- */
+  document.getElementById('form').addEventListener('submit',e=>{
+    e.preventDefault();const f=e.target,nome=f.nome.value.trim();
+    if(!nome){f.nome.focus();f.nome.style.borderColor='var(--laranja)';f.nome.setAttribute('aria-invalid','true');return;}
+    const txt=['Olá! Vim pelo site da D&M Contabilidade.','*Nome:* '+nome,f.empresa.value.trim()?'*Empresa:* '+f.empresa.value.trim():'','*Serviço:* '+f.servico.value,f.msg.value.trim()?'*Mensagem:* '+f.msg.value.trim():''].filter(Boolean).join('\n');
+    window.open('https://wa.me/'+WHATS+'?text='+encodeURIComponent(txt),'_blank','noopener');
+  });
+
+  document.getElementById('ano').textContent=new Date().getFullYear();
+
+  /* ---------- grade de conferência (tecla G ou ?grade=1) ---------- */
+  const gc=document.getElementById('gradeCols');for(let i=0;i<16;i++)gc.appendChild(document.createElement('i'));
+  const ajustaGrade=()=>{const n=+getComputedStyle(document.documentElement).getPropertyValue('--cols');[...gc.children].forEach((c,i)=>c.style.display=i<n?'':'none');};
+  ajustaGrade();addEventListener('resize',ajustaGrade);
+  if(new URLSearchParams(location.search).get('grade'))document.documentElement.classList.add('ver-grade');
+  addEventListener('keydown',e=>{if((e.key==='g'||e.key==='G')&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))document.documentElement.classList.toggle('ver-grade');});
+
+  /* ---------- tema do mês ---------- */
+  if(window.TEMA_ATUAL){
+    document.getElementById('campanhaTxt').innerHTML=TEMA_ATUAL.texto;
+    document.getElementById('fecharAviso').addEventListener('click',()=>document.documentElement.classList.add('aviso-fechado'));
+    document.querySelectorAll('img[data-logo]').forEach(img=>{const t=new Image();t.onload=()=>{img.src=TEMA_ATUAL.logo;};t.src=TEMA_ATUAL.logo;});
+  }
+})();
+</script>
+</body>
+</html>
