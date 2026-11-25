@@ -475,6 +475,31 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--laranja)
 form .btn{width:100%}
 form .obs{font-size:var(--t-mini);line-height:var(--lh-mini);color:rgba(255,255,255,.64);text-align:center;margin-top:calc(var(--s2) * -1)}
 
+/* avaliações */
+.avaliacoes{background:var(--creme)}
+.nota{background:var(--verde);color:#fff;border-radius:var(--r3);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s3);position:relative;overflow:hidden}
+.nota .padrao{opacity:.6}
+.nota>*{position:relative}
+.nota .valor{font-family:"Anton";font-size:80px;line-height:80px}
+.estrelas{display:flex;gap:var(--s1);color:#f6b819}
+.estrelas .i{width:20px;height:20px;fill:currentColor;stroke:none}
+.estrelas .vazia{color:rgba(255,255,255,.28)}
+.nota p{font-size:var(--t-peq);line-height:var(--lh-peq);color:rgba(255,255,255,.84)}
+.nota .acoes{margin-top:var(--s2);flex-direction:column;align-items:stretch;gap:var(--s2)}
+.nota .acoes .btn{width:100%}
+.depo{background:#fff;border-radius:var(--r3);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s4);border:1px solid rgba(var(--verde-rgb),.08)}
+.depo .estrelas .i{width:16px;height:16px}
+.depo blockquote{font-size:var(--t-lead);line-height:var(--lh-lead);color:var(--texto);flex:1}
+.depo blockquote::before{content:"“";display:block;font-family:"Anton";font-size:48px;line-height:32px;color:var(--laranja)}
+.depo .autor{display:flex;align-items:center;gap:var(--s3)}
+.depo .autor .avatar{width:var(--s8);height:var(--s8);border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center;font-size:var(--t-corpo);line-height:var(--lh-corpo);font-weight:700;flex:none}
+.depo .autor strong{display:block;color:var(--verde);font-size:var(--t-corpo);line-height:var(--lh-corpo)}
+.depo .autor span{font-size:var(--t-mini);line-height:var(--lh-mini);color:var(--cinza)}
+.depo.cta{background:var(--laranja);color:var(--sobre);border:0;justify-content:space-between}
+.depo.cta .anton{font-size:32px;line-height:36px}
+.depo.cta p{font-size:var(--t-peq);line-height:var(--lh-peq)}
+.depo.cta a{display:inline-flex;align-items:center;gap:var(--s2);font-size:var(--t-mini);line-height:var(--lh-mini);font-weight:700;letter-spacing:2px;text-transform:uppercase}
+
 /* rodapé */
 footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0 var(--s4);overflow:hidden}
 .ft-gigante{font-family:"Anton";text-transform:uppercase;font-size:136px;line-height:120px;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.14);white-space:nowrap;margin-bottom:var(--s10)}
@@ -682,6 +707,11 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
   form h3{font-size:28px;line-height:32px}
   form>p{margin-top:calc(var(--s2) * -1);font-size:var(--t-peq);line-height:var(--lh-peq)}
   textarea{min-height:var(--s12)}
+  /* avaliações */
+  .nota{padding:var(--s5);gap:var(--s2)}
+  .nota .valor{font-size:56px;line-height:56px}
+  .depo{padding:var(--s5);gap:var(--s3)}
+  .depo blockquote{font-size:var(--t-corpo);line-height:var(--lh-corpo)}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -699,6 +729,7 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
     <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-seta-esq" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
     <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
     <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
     <symbol id="i-fita" viewBox="0 0 24 24"><path d="M12 3c-2 0-3.5 1.6-3.5 3.6 0 1.6.9 3.2 1.9 4.7L6 18.5l2.5 2.5 3.5-5.6 3.5 5.6 2.5-2.5-4.4-7.2c1-1.5 1.9-3.1 1.9-4.7C15.5 4.6 14 3 12 3z"/></symbol>
@@ -765,9 +796,9 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
         <div class="hero-foto">
           <div class="bloco"></div>
           <div class="moldura"><img src="img/equipe-2.jpg" alt="Equipe da D&amp;M Contabilidade reunida no escritório"></div>
-          <div class="selo" aria-label="Mais de 26 anos de experiência">
+          <div class="selo" aria-label="Mais de 27 anos de experiência" data-anos-label>
             <svg viewBox="0 0 150 150" aria-hidden="true"><defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text textLength="360" lengthAdjust="spacing"><textPath href="#circ" textLength="360" lengthAdjust="spacing">D&amp;M Contabilidade • Bom Retiro • SC •</textPath></text></svg>
-            <div class="num">26+<small>anos de<br>experiência</small></div>
+            <div class="num"><span data-anos>27</span>+<small>anos de<br>experiência</small></div>
           </div>
           <div class="flutua"><div class="anton">Até 70%</div><p>de economia no INSS na regularização de obras</p></div>
         </div>
@@ -804,7 +835,7 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
       </div>
     </div>
     <div class="grid numeros">
-      <div class="numero rv" style="--d:4;--t:4;--m:2"><div class="anton"><span class="cont" data-alvo="26">0</span><sup>+</sup></div><p>anos de experiência nos setores privado e público</p></div>
+      <div class="numero rv" style="--d:4;--t:4;--m:2"><div class="anton"><span class="cont" data-alvo="27" data-anos-alvo>0</span><sup>+</sup></div><p>anos de experiência nos setores privado e público</p></div>
       <div class="numero rv d1" style="--d:4;--t:4;--m:2"><div class="anton"><span class="cont" data-alvo="10">0</span></div><p>áreas de atuação</p></div>
       <div class="numero rv d2" style="--d:4;--t:4;--m:2"><div class="anton"><span class="cont" data-alvo="8">0</span></div><p>profissionais na equipe</p></div>
       <div class="numero rv d3" style="--d:4;--t:4;--m:2"><div class="anton"><small>até </small><span class="cont" data-alvo="70">0</span><sup>%</sup></div><p>de economia no INSS em regularização de obras</p></div>
@@ -956,7 +987,7 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
           <span class="cargo">Contadora · Proprietária e CEO</span>
           <h3>Neiva Regina Deinani Moretti</h3>
           <p>Atuação em contabilidade privada e administração pública</p>
-          <div class="big">26+<small>anos de experiência</small></div>
+          <div class="big"><span data-anos>27</span>+<small>anos de experiência</small></div>
         </div>
       </article>
       <article class="pessoa rv d1" style="--d:3;--t:4;--m:2"><img src="img/alison.jpg" alt="Alison Vinicius Moretti" loading="lazy"><div class="info"><h4>Alison Vinicius Moretti</h4><span>Contador · Gerente Geral</span></div></article>
@@ -971,6 +1002,41 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
     <div class="eq-foto rv">
       <img src="img/equipe.jpg" alt="Equipe completa da D&amp;M Contabilidade" loading="lazy">
       <div class="tag">Equipe <b>D&amp;M Contabilidade</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES (avaliações reais do Perfil da Empresa no Google) -->
+<section class="sec avaliacoes" id="avaliacoes">
+  <div class="wrap">
+    <div class="grid cab">
+      <div class="rv" style="--d:10;--t:8">
+        <span class="eyebrow">Avaliações</span>
+        <h2 class="h2" style="color:var(--verde)">O que dizem <span class="tarja t-laranja">nossos clientes</span></h2>
+      </div>
+    </div>
+    <div class="grid">
+      <aside class="nota rv" style="--d:5;--t:8" aria-label="Nota no Google">
+        <div class="padrao"></div>
+        <span class="eyebrow" style="color:#fff">Nota no Google</span>
+        <div class="valor" id="notaValor">4,6</div>
+        <div class="estrelas" aria-hidden="true"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i" style="opacity:.6"><use href="#i-estrela"/></svg></div>
+        <p><b id="notaTotal">21</b> avaliações no Perfil da Empresa no Google</p>
+        <div class="acoes">
+          <a class="btn b-laranja" href="https://www.google.com/maps/place/D%26M+Contabilidade/@-27.7965904,-49.4924894,17z/data=!4m6!3m5!1s0x9520659536e1f187:0x4e4851db757cfee0!8m2!3d-27.7965904!4d-49.4924894!16s%2Fg%2F11js3b00mc" target="_blank" rel="noopener">Ver avaliações no Google</a>
+          <a class="btn b-linha" href="https://www.google.com/maps/place/D%26M+Contabilidade/@-27.7965904,-49.4924894,17z/data=!4m6!3m5!1s0x9520659536e1f187:0x4e4851db757cfee0!8m2!3d-27.7965904!4d-49.4924894!16s%2Fg%2F11js3b00mc" target="_blank" rel="noopener">Avaliar a D&amp;M</a>
+        </div>
+      </aside>
+      <figure class="depo rv d1" style="--ds:7;--d:5;--t:4">
+        <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
+        <blockquote>Excelente escritório..muito de toda documentação para regularizar minha casa localizada na zona rural</blockquote>
+        <figcaption class="autor"><span class="avatar" aria-hidden="true">J</span><span><strong>José Roberto F.</strong><span>Avaliação no Google</span></span></figcaption>
+      </figure>
+      <figure class="depo rv d2" style="--d:5;--t:4">
+        <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
+        <blockquote>Melhor contabilidade, profissionais de alto nível.</blockquote>
+        <figcaption class="autor"><span class="avatar" aria-hidden="true">R</span><span><strong>Renan D.</strong><span>Avaliação no Google</span></span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1123,6 +1189,16 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
   bg.addEventListener('click',()=>{const a=mn.classList.toggle('aberto');bg.classList.toggle('x',a);bg.setAttribute('aria-expanded',a);});
   mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',fecha));
   addEventListener('keydown',e=>{if(e.key==='Escape')fecha();});
+
+  /* ---------- anos de experiência ----------
+     27 anos em 2026; soma 1 a cada maio (maio/2027 = 28, maio/2028 = 29…) */
+  const ANOS_BASE=27, ANO_BASE=2026, MES_VIRADA=5;
+  const hoje=new Date();
+  const anos=ANOS_BASE+(hoje.getFullYear()-ANO_BASE)-((hoje.getMonth()+1)<MES_VIRADA?1:0);
+  const anosOk=Math.max(ANOS_BASE,anos);
+  document.querySelectorAll('[data-anos]').forEach(e=>e.textContent=anosOk);
+  document.querySelectorAll('[data-anos-alvo]').forEach(e=>e.dataset.alvo=anosOk);
+  document.querySelectorAll('[data-anos-label]').forEach(e=>e.setAttribute('aria-label','Mais de '+anosOk+' anos de experiência'));
 
   /* ---------- revelar e contadores ---------- */
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.15});
