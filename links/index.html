@@ -8,53 +8,11 @@
 <link rel="canonical" href="https://www.demcontabilidade.com.br/links/">
 <link rel="icon" type="image/png" href="/img/logo-dm.png">
 <meta name="theme-color" content="#0f4637">
-<script>
-/* mesmos temas mensais do site */
-(function(){
-  var T={9:'amarelo',10:'rosa',11:'azul'},C={amarelo:'#0f4637',rosa:'#6b1842',azul:'#0f3460'};
-  var q=new URLSearchParams(location.search).get('tema'),t=q||T[new Date().getMonth()+1]||'padrao';
-  document.documentElement.setAttribute('data-tema',t);
-  if(C[t])document.querySelector('meta[name="theme-color"]').setAttribute('content',C[t]);
-  window.LOGO_TEMA=C[t]?'/img/logo-dm-'+t+'.png':null;
-})();
-</script>
+<script src="/js/links-tema.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-<style>
-/* base 8/4 px · coluna única centralizada (4 colunas no celular) */
-:root{--verde:#0f4637;--verde-3:#072a21;--laranja:#e9471f;--sobre:#fff;--r:16px}
-html[data-tema="rosa"]{--verde:#6b1842;--verde-3:#3b0c24;--laranja:#e5458a}
-html[data-tema="azul"]{--verde:#0f3460;--verde-3:#061b35;--laranja:#2f7de1}
-html[data-tema="amarelo"]{--laranja:#f6c419;--sobre:#1f1a0a}
-*{box-sizing:border-box;margin:0;padding:0}
-body{min-height:100vh;font-family:"Open Sans",system-ui,sans-serif;font-size:16px;line-height:24px;color:#fff;background:var(--verde);
-  background-image:radial-gradient(circle at 80% 0%,rgba(255,255,255,.08),transparent 48%),repeating-linear-gradient(135deg,transparent 0 112px,rgba(255,255,255,.03) 112px 113px);
-  display:flex;justify-content:center;padding:48px 16px 32px;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.box{width:100%;max-width:480px;display:flex;flex-direction:column;align-items:center}
-.logo{height:72px;width:auto}
-h1{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:32px;line-height:40px;margin-top:24px;text-align:center}
-.sub{margin-top:4px;font-size:14px;line-height:20px;color:rgba(255,255,255,.8);text-align:center}
-.aviso{display:none;width:100%;margin-top:24px;padding:12px 16px;border-radius:12px;background:var(--laranja);color:var(--sobre);font-size:14px;line-height:20px;font-weight:700;text-align:center}
-.aviso.on{display:block}
-.links{width:100%;display:grid;gap:12px;margin-top:32px;list-style:none}
-.link{display:flex;align-items:center;gap:16px;min-height:56px;padding:8px 16px;border-radius:var(--r);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);font-weight:700;transition:transform .2s,background .2s}
-.link:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
-.link:focus-visible{outline:2px solid #fff;outline-offset:4px}
-.link .ic{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,.12);flex:none}
-.link .seta{margin-left:auto;opacity:.6}
-.link.destaque{background:var(--laranja);color:var(--sobre);border-color:transparent}
-.link.destaque .ic{background:rgba(0,0,0,.12)}
-.link small{display:block;font-weight:400;font-size:12px;line-height:16px;opacity:.8}
-.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2px;stroke-linecap:round;stroke-linejoin:round}
-.i.cheio{fill:currentColor;stroke:none}
-.i.peq{width:16px;height:16px}
-.nota{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.1);font-size:14px;line-height:20px}
-.nota b{color:#f6b819}
-footer{margin-top:40px;font-size:12px;line-height:16px;color:rgba(255,255,255,.6);text-align:center}
-footer a{color:#fff;font-weight:700}
-</style>
+<link rel="stylesheet" href="/css/links.css">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -72,7 +30,7 @@ footer a{color:#fff;font-weight:700}
   <img class="logo" src="/img/logo-dm.png" alt="D&amp;M Contabilidade">
   <h1>D&amp;M Contabilidade</h1>
   <p class="sub">Escritório de contabilidade em Bom Retiro, SC · mais de <span id="anos">27</span> anos</p>
-  <a class="nota" href="https://www.google.com/maps/place/D%26M+Contabilidade/@-27.7965904,-49.4924894,17z/data=!4m6!3m5!1s0x9520659536e1f187:0x4e4851db757cfee0!8m2!3d-27.7965904!4d-49.4924894!16s%2Fg%2F11js3b00mc" target="_blank" rel="noopener"><b>★ 4,6</b> 21 avaliações no Google</a>
+  <a class="nota" id="nota" href="https://www.google.com/maps/place/D%26M+Contabilidade/@-27.7965904,-49.4924894,17z/data=!4m6!3m5!1s0x9520659536e1f187:0x4e4851db757cfee0!8m2!3d-27.7965904!4d-49.4924894!16s%2Fg%2F11js3b00mc" target="_blank" rel="noopener"><b>★ <span id="notaV">4,6</span></b> <span id="notaT">21</span> avaliações no Google Maps</a>
 
   <p class="aviso" id="aviso" role="note"></p>
 
@@ -90,16 +48,6 @@ footer a{color:#fff;font-weight:700}
   <footer>D&amp;M Contabilidade · CNPJ 19.662.763/0001-26<br>Desenvolvido por <a href="/">CTech Sistemas</a></footer>
 </main>
 
-<script>
-if(window.LOGO_TEMA){var lg=document.querySelector('.logo'),im=new Image();im.onload=function(){lg.src=LOGO_TEMA};im.src=LOGO_TEMA;}
-/* anos de experiência: 27 em 2026, +1 a cada maio */
-(function(){var h=new Date(),a=27+(h.getFullYear()-2026)-((h.getMonth()+1)<5?1:0);document.getElementById('anos').textContent=Math.max(27,a);})();
-/* mesmo aviso do site (avisos.json) */
-fetch('/avisos.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():[]}).then(function(l){
-  var hj=new Date().toISOString().slice(0,10);
-  var a=(l||[]).find(function(x){return x&&x.texto&&(!x.inicio||x.inicio<=hj)&&(!x.fim||x.fim>=hj)});
-  if(a){var e=document.getElementById('aviso');e.textContent=a.texto;e.classList.add('on');}
-}).catch(function(){});
-</script>
+<script src="/js/links.js"></script>
 </body>
 </html>
