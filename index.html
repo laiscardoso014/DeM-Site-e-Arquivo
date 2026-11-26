@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D&amp;M Contabilidade | Bom Retiro - SC</title>
-<meta name="description" content="D&amp;M Contabilidade em Bom Retiro/SC: abertura de empresas, contabilidade consultiva, planejamento tributário, departamento pessoal, imposto de renda, regularização de obras e contabilidade pública.">
-<meta property="og:title" content="D&amp;M Contabilidade">
+<title>D&amp;M Contabilidade | Escritório de Contabilidade em Bom Retiro - SC</title>
+<meta name="description" content="D&amp;M (DEM) Contabilidade: escritório de contabilidade em Bom Retiro, SC, com mais de 27 anos de experiência. Abertura de empresas, imposto de renda, departamento pessoal, planejamento tributário e regularização de obras.">
+<meta property="og:title" content="D&amp;M Contabilidade | Contabilidade em Bom Retiro - SC">
 <meta property="og:description" content="Assessoria contábil, fiscal e trabalhista para empresas e profissionais em Bom Retiro/SC.">
 <meta property="og:image" content="https://www.demcontabilidade.com.br/img/equipe.jpg">
 <meta property="og:url" content="https://www.demcontabilidade.com.br/">
@@ -20,7 +20,7 @@
   "url": "https://www.demcontabilidade.com.br/",
   "logo": "https://www.demcontabilidade.com.br/img/logo-dm.png",
   "image": "https://www.demcontabilidade.com.br/img/equipe.jpg",
-  "description": "Escritório contábil em Bom Retiro, SC: abertura de empresas, planejamento tributário, escrituração fiscal e contábil, departamento pessoal, Imposto de Renda, regularização de obras e contabilidade pública.",
+  "description": "Escritório de contabilidade em Bom Retiro, SC: abertura de empresas, planejamento tributário, escrituração fiscal e contábil, departamento pessoal, Imposto de Renda, regularização de obras e contabilidade pública.",
   "telephone": "+55-49-3277-0903",
   "email": "demescritoriocontabil@gmail.com",
   "taxID": "19.662.763/0001-26",
@@ -29,10 +29,40 @@
     "streetAddress": "Rua Anita Garibaldi, 65, Sala II, Centro",
     "addressLocality": "Bom Retiro",
     "addressRegion": "SC",
-    "addressCountry": "BR"
+    "addressCountry": "BR",
+    "postalCode": "88680-000"
   },
-  "areaServed": "Bom Retiro, SC",
-  "sameAs": ["https://www.instagram.com/neivamoretticontabilidade/"]
+  "areaServed": {
+    "@type": "City",
+    "name": "Bom Retiro",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Santa Catarina"
+    }
+  },
+  "sameAs": [
+    "https://www.instagram.com/neivamoretticontabilidade/"
+  ],
+  "alternateName": [
+    "DEM Contabilidade",
+    "DM Contabilidade",
+    "D e M Contabilidade"
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -27.7965904,
+    "longitude": -49.4924894
+  },
+  "hasMap": "https://www.google.com/maps/place/D%26M+Contabilidade/@-27.7965904,-49.4924894,17z/data=!4m6!3m5!1s0x9520659536e1f187:0x4e4851db757cfee0!8m2!3d-27.7965904!4d-49.4924894!16s%2Fg%2F11js3b00mc",
+  "knowsAbout": [
+    "Contabilidade",
+    "Abertura de empresas",
+    "Planejamento tributário",
+    "Departamento pessoal",
+    "Imposto de Renda",
+    "Regularização de obras no INSS",
+    "Contabilidade pública"
+  ]
 }
 </script>
 <link rel="icon" type="image/png" href="img/logo-dm.png">
@@ -169,8 +199,7 @@ html.ver-grade .overlay-grade{display:block}
 .t-laranja{background:var(--laranja);color:var(--sobre)}
 .t-verde{background:var(--verde);color:#fff}
 .eyebrow{display:inline-flex;align-items:center;gap:var(--s3);font-size:var(--t-corpo);line-height:var(--lh-corpo);font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--laranja)}
-.eyebrow::before{content:"";width:var(--s6);height:2px;background:currentColor}
-@media (max-width:767px){.eyebrow{font-size:var(--t-peq);line-height:var(--lh-peq);letter-spacing:2px;gap:var(--s2)}.eyebrow::before{width:var(--s5)}}
+@media (max-width:767px){.eyebrow{font-size:var(--t-peq);line-height:var(--lh-peq);letter-spacing:2px;gap:var(--s2)}}
 .escuro{background:var(--verde);color:#fff}
 .escuro .sub{color:rgba(255,255,255,.8)}
 .claro{background:var(--creme);color:var(--texto)}
@@ -347,17 +376,12 @@ section{position:relative}
 .paraquem .pontos{color:var(--verde);left:var(--s6);bottom:var(--s8);opacity:.6}
 .pq-foto{margin-top:var(--s8);border-radius:var(--r3);overflow:hidden;aspect-ratio:4/3;box-shadow:0 24px 48px rgba(0,0,0,.2);transform:rotate(-2deg)}
 .pq-foto img{width:100%;height:100%;object-fit:cover}
-.pq-lista{list-style:none;align-self:center}
-.pq-lista li{position:relative;border-top:2px solid color-mix(in srgb,var(--sobre) 32%,transparent);overflow:hidden}
-.pq-lista li:last-child{border-bottom:2px solid color-mix(in srgb,var(--sobre) 32%,transparent)}
-.pq-lista li::before{content:"";position:absolute;inset:0;background:var(--verde);transform:translateY(101%);transition:transform .45s var(--ease)}
-.pq-lista li:hover::before{transform:none}
-.pq-lista .in{position:relative;display:flex;align-items:center;gap:var(--s4);min-height:var(--s14);padding:var(--s4);transition:color .3s}
-.pq-lista li:hover .in{color:#fff}
-.pq-lista .n{font-family:"Anton";font-size:16px;line-height:16px;width:var(--s8);height:var(--s8);border-radius:50%;display:grid;place-items:center;background:var(--verde);color:#fff;flex:none}
-.pq-lista .t{font-family:"Anton";text-transform:uppercase;font-size:32px;line-height:36px}
-.pq-lista .i{margin-left:auto;width:32px;height:32px;opacity:0;transform:translateX(-16px);transition:.4s var(--ease)}
-.pq-lista li:hover .i{opacity:1;transform:none}
+.pq-grid{list-style:none;align-self:center;display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter)}
+.pq-item{display:flex;gap:var(--s4);align-items:flex-start;background:rgba(255,255,255,.12);border:1px solid color-mix(in srgb,var(--sobre) 24%,transparent);border-radius:var(--r3);padding:var(--s5)}
+.pq-item:last-child{grid-column:1 / -1}
+.pq-item .ic{width:var(--s8);height:var(--s8);border-radius:var(--r2);background:var(--verde);color:#fff;display:grid;place-items:center;flex:none}
+.pq-item h3{font-family:"Anton";font-weight:400;text-transform:uppercase;font-size:24px;line-height:28px}
+.pq-item p{margin-top:var(--s1);font-size:var(--t-peq);line-height:var(--lh-peq);opacity:.9}
 
 /* jornada */
 .jornada{overflow:hidden}
@@ -580,9 +604,8 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
   .jeito-img .leg{font-size:28px;line-height:32px;left:var(--s5);right:var(--s5);bottom:var(--s5)}
   .jeito-item{grid-template-columns:var(--s10) 1fr}
   .jeito-item .n{font-size:32px;line-height:32px}
-  .pq-lista .t{font-size:20px;line-height:24px}
-  .pq-lista .in{padding:var(--s3) var(--s1);gap:var(--s3);min-height:var(--s12)}
-  .pq-lista .n{width:var(--s6);height:var(--s6);font-size:12px;line-height:16px}
+  .pq-grid{grid-template-columns:1fr}
+  .pq-item h3{font-size:20px;line-height:24px}
   .trilha{grid-auto-columns:calc(100% - var(--s8))}
   .etapa{padding:var(--s5)}
   .c1 .citacao{font-size:40px;line-height:40px;margin-top:var(--s10)}
@@ -596,7 +619,7 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
   form{padding:var(--s6) var(--s4)}
   .campos2{grid-template-columns:1fr}
   .ft-gigante{font-size:48px;line-height:48px;margin-bottom:var(--s8)}
-  .historia .pontos,.servicos .pontos{display:none}
+  .historia .pontos,.servicos .pontos,.paraquem .pontos{display:none}
   .canal strong{font-size:var(--t-peq);line-height:var(--lh-peq)}
   .whats{right:var(--s4);bottom:var(--s4);height:var(--s8);min-width:var(--s8);padding:0 var(--s2)}
   .whats .i{width:32px;height:32px}
@@ -659,9 +682,9 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
   .jeito-item p{font-size:var(--t-peq);line-height:var(--lh-peq);margin-top:var(--s1)}
   /* quem atendemos */
   .pq-foto{margin-top:var(--s5);aspect-ratio:16/10}
-  .pq-lista .in{min-height:var(--s10);padding:var(--s2) var(--s4)}
-  .pq-lista .t{font-size:24px;line-height:28px}
-  .pq-lista .n{width:var(--s6);height:var(--s6);font-size:12px;line-height:16px}
+  .pq-item{padding:var(--s4);gap:var(--s3)}
+  .pq-item .ic{width:var(--s7);height:var(--s7)}
+  .pq-item h3{font-size:20px;line-height:24px}
   /* jornada */
   .trilha{margin-top:var(--s4)}
   .etapa ul{gap:var(--s1)}
@@ -730,6 +753,9 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
     <symbol id="i-seta-esq" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
     <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></symbol>
+    <symbol id="i-usuario" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.4 4.2-6.5 8-6.5s7 2.1 8 6.5"/></symbol>
+    <symbol id="i-maleta" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 13h18"/></symbol>
+    <symbol id="i-foguete" viewBox="0 0 24 24"><path d="M12 3c3.5 2 5.5 5.5 5.5 10l-2.5 3h-6l-2.5-3C6.5 8.5 8.5 5 12 3z"/><circle cx="12" cy="10" r="2"/><path d="M9 16l-2 5 5-2 5 2-2-5"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
     <symbol id="i-cima" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
     <symbol id="i-fita" viewBox="0 0 24 24"><path d="M12 3c-2 0-3.5 1.6-3.5 3.6 0 1.6.9 3.2 1.9 4.7L6 18.5l2.5 2.5 3.5-5.6 3.5 5.6 2.5-2.5-4.4-7.2c1-1.5 1.9-3.1 1.9-4.7C15.5 4.6 14 3 12 3z"/></symbol>
@@ -786,7 +812,7 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
           <span class="linha"><span>com visão de</span></span>
           <span class="linha"><span><span class="tarja t-laranja">negócio</span></span></span>
         </h1>
-        <p class="lead">Gestão contábil, fiscal e trabalhista com <b>atendimento próximo</b> e orientação estratégica, para que suas decisões sejam baseadas em números confiáveis.</p>
+        <p class="lead">Escritório de contabilidade em Bom Retiro, SC. Gestão contábil, fiscal e trabalhista com <b>atendimento próximo</b> e orientação estratégica, para que suas decisões sejam baseadas em números confiáveis.</p>
         <div class="acoes">
           <a href="https://wa.me/5549985031923?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener" class="btn b-laranja"><svg class="i"><use href="#i-seta"/></svg>Agendar diagnóstico gratuito</a>
           <a href="#servicos" class="btn b-linha">Conhecer serviços</a>
@@ -893,12 +919,12 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
         <h2 class="h2">Quem<br><span class="tarja t-verde">atendemos</span></h2>
         <div class="pq-foto"><img src="img/equipe-3.jpg" alt="Equipe D&amp;M Contabilidade" loading="lazy"></div>
       </div>
-      <ul class="pq-lista" style="--ds:8;--d:9;--t:8">
-        <li class="rv"><div class="in"><span class="n">1</span><span class="t">Profissionais liberais e autônomos</span><svg class="i"><use href="#i-seta"/></svg></div></li>
-        <li class="rv d1"><div class="in"><span class="n">2</span><span class="t">Prestadores de serviços</span><svg class="i"><use href="#i-seta"/></svg></div></li>
-        <li class="rv d2"><div class="in"><span class="n">3</span><span class="t">Pequenas e médias empresas</span><svg class="i"><use href="#i-seta"/></svg></div></li>
-        <li class="rv d3"><div class="in"><span class="n">4</span><span class="t">Startups e negócios digitais</span><svg class="i"><use href="#i-seta"/></svg></div></li>
-        <li class="rv d3"><div class="in"><span class="n">5</span><span class="t">Empresas do Lucro Real e Presumido</span><svg class="i"><use href="#i-seta"/></svg></div></li>
+      <ul class="pq-grid" style="--ds:8;--d:9;--t:8">
+        <li class="pq-item rv"><span class="ic"><svg class="i"><use href="#i-usuario"/></svg></span><div><h3>Profissionais liberais e autônomos</h3><p>Imposto de Renda, INSS e orientação para quem trabalha por conta própria.</p></div></li>
+        <li class="pq-item rv d1"><span class="ic"><svg class="i"><use href="#i-maleta"/></svg></span><div><h3>Prestadores de serviços</h3><p>Enquadramento tributário e obrigações fiscais em dia.</p></div></li>
+        <li class="pq-item rv d1"><span class="ic"><svg class="i"><use href="#i-predio"/></svg></span><div><h3>Pequenas e médias empresas</h3><p>Contabilidade, fiscal e folha de pagamento em um só lugar.</p></div></li>
+        <li class="pq-item rv d2"><span class="ic"><svg class="i"><use href="#i-foguete"/></svg></span><div><h3>Startups e negócios digitais</h3><p>Abertura da empresa e estrutura tributária para crescer.</p></div></li>
+        <li class="pq-item rv d3"><span class="ic"><svg class="i"><use href="#i-grafico"/></svg></span><div><h3>Empresas do Lucro Real e Presumido</h3><p>Escrituração, apuração de tributos e planejamento tributário contínuo.</p></div></li>
       </ul>
     </div>
   </div>
@@ -995,7 +1021,7 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
       <article class="pessoa rv d1" style="--d:3;--t:4;--m:2"><img src="img/fabricio.jpg" alt="Fabrício Gabriel da Cruz" loading="lazy"><div class="info"><h4>Fabrício Gabriel da Cruz</h4><span>Analista de Escrita Fiscal</span></div></article>
       <article class="pessoa rv d2" style="--d:3;--t:4;--m:2"><img src="img/jessica.jpg" alt="Jéssica Sangaletti Moretti" loading="lazy"><div class="info"><h4>Jéssica Sangaletti Moretti</h4><span>Analista de Escrita Fiscal</span></div></article>
       <article class="pessoa rv" style="--d:3;--t:4;--m:2"><img src="img/mateus.jpg" alt="Mateus Zanini da Silva" loading="lazy"><div class="info"><h4>Mateus Zanini da Silva</h4><span>Analista de Escrita Fiscal e Contábil</span></div></article>
-      <article class="pessoa rv d1" style="--d:3;--t:4;--m:2"><img src="img/darla.jpg" alt="Darla Cristine" loading="lazy"><div class="info"><h4>Darla Cristine</h4><span>Departamento Pessoal</span></div></article>
+      <article class="pessoa rv d1" style="--d:3;--t:4;--m:2"><img src="img/darla.jpg" alt="Darla Cristine Hinckel" loading="lazy"><div class="info"><h4>Darla Cristine Hinckel</h4><span>Departamento Pessoal</span></div></article>
       <article class="pessoa rv d2" style="--d:3;--t:4;--m:2"><img src="img/lais.jpg" alt="Lais Cardoso" loading="lazy"><div class="info"><h4>Lais Cardoso</h4><span>Contínuo e Social Media</span></div></article>
       <a href="#contato" class="pessoa cta rv d3" style="--d:3;--t:4;--m:2"><div><div class="anton">Agende uma reunião</div><span class="ver">Contato <svg class="i i20"><use href="#i-seta"/></svg></span></div></a>
     </div>
@@ -1103,7 +1129,7 @@ footer{background:var(--verde-3);color:rgba(255,255,255,.72);padding:var(--s8) 0
     <div class="grid ft-grid">
       <div style="--d:5;--t:8">
         <img src="img/logo-dm.png" data-logo alt="D&amp;M Contabilidade">
-        <p>Assessoria contábil, fiscal e trabalhista para empresas e profissionais.</p>
+        <p>D&amp;M Contabilidade · escritório de contabilidade em Bom Retiro, SC. Assessoria contábil, fiscal e trabalhista para empresas e profissionais.</p>
       </div>
       <div style="--ds:7;--d:3;--t:4;--m:2">
         <h5>Navegação</h5>
