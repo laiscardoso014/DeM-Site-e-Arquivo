@@ -412,6 +412,10 @@ form .obs{font-size:var(--t-mini);line-height:var(--lh-mini);color:rgba(255,255,
 .avaliacoes{background:var(--creme)}
 .nota{background:var(--verde);color:#fff;border-radius:var(--r3);padding:var(--s6);display:flex;flex-direction:column;gap:var(--s3);position:relative;overflow:hidden}
 .nota .padrao{opacity:.6}
+.nota{justify-content:center;align-items:center;text-align:center}
+.nota .estrelas{justify-content:center}
+.nota p{text-wrap:balance}
+.nota .acoes{align-self:stretch}
 .nota>*{position:relative}
 .nota .valor{font-family:"Anton";font-size:80px;line-height:80px}
 .estrelas{display:flex;gap:var(--s1);color:#f6b819}
