@@ -160,6 +160,22 @@
     dl.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();prox.click()}if(e.key==='ArrowLeft'){e.preventDefault();ant.click()}});
     dl.addEventListener('scroll',()=>requestAnimationFrame(estado),{passive:true});
     addEventListener('resize',estado);estado();
+    /* passa sozinho a cada 5 s; pausa com o mouse em cima, no foco, no toque e fora da tela */
+    const fim=()=>dl.scrollLeft+dl.clientWidth>=dl.scrollWidth-4;
+    let pausa=false,visivel=false,timer=null;
+    const avanca=()=>{if(pausa||!visivel||document.hidden)return;fim()?dl.scrollTo({left:0}):dl.scrollBy({left:passo()})};
+    const liga=()=>{clearInterval(timer);timer=setInterval(avanca,5000)};
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const trilho=dl.closest('.depo-trilho');
+      trilho.addEventListener('mouseenter',()=>pausa=true);
+      trilho.addEventListener('mouseleave',()=>{pausa=false;liga()});
+      dl.addEventListener('focusin',()=>pausa=true);
+      dl.addEventListener('focusout',()=>{pausa=false;liga()});
+      dl.addEventListener('touchstart',()=>{pausa=true;clearTimeout(dl._t);dl._t=setTimeout(()=>{pausa=false;liga()},8000)},{passive:true});
+      [ant,prox].forEach(b=>b.addEventListener('click',liga));
+      if('IntersectionObserver' in window)new IntersectionObserver(es=>{visivel=es[0].isIntersecting},{threshold:.4}).observe(dl);else visivel=true;
+      liga();
+    }
   }
 
   /* ---------- avaliações do Google (/api/avaliacoes), carregadas quando a seção aparece ---------- */
