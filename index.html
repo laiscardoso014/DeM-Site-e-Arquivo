@@ -371,31 +371,61 @@
         <span class="eyebrow">Avaliações</span>
         <h2 class="h2" style="color:var(--verde)">O que dizem <span class="tarja t-laranja">nossos clientes</span></h2>
       </div>
+      <div class="depo-nav rv" style="--ds:11;--d:6;--t:8">
+        <span class="depo-cont" id="depoCont" aria-live="polite">6 avaliações com comentário</span>
+        <button class="depo-btn" type="button" id="depoAnt" aria-label="Avaliação anterior"><svg class="i"><use href="#i-seta-esq"/></svg></button>
+        <button class="depo-btn" type="button" id="depoProx" aria-label="Próxima avaliação"><svg class="i"><use href="#i-seta"/></svg></button>
+      </div>
     </div>
     <div class="grid">
+      <!-- NOTA DO GOOGLE: atualizar à mão (última conferência: 27/11/2026) -->
       <aside class="nota rv" style="--d:5;--t:8" aria-label="Nota no Google">
         <div class="padrao"></div>
         <span class="eyebrow" style="color:#fff">Nota no Google</span>
-        <div class="valor" id="notaValor">4,6</div>
+        <div class="valor" id="notaValor">4,7</div>
         <div class="estrelas" id="notaEstrelas" aria-hidden="true"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i" style="opacity:.6"><use href="#i-estrela"/></svg></div>
-        <p><b id="notaTotal">21</b> avaliações no Perfil da Empresa no Google</p>
+        <p><b id="notaTotal">24</b> avaliações no Perfil da Empresa no Google</p>
         <div class="acoes">
           <a class="btn b-laranja" href="https://www.google.com/maps/place/D%26M+Contabilidade/@-27.7965904,-49.4924894,17z/data=!4m6!3m5!1s0x9520659536e1f187:0x4e4851db757cfee0!8m2!3d-27.7965904!4d-49.4924894!16s%2Fg%2F11js3b00mc" target="_blank" rel="noopener" id="btnVerAval">Ver avaliações no Google</a>
           <a class="btn b-linha" href="https://www.google.com/maps/place/D%26M+Contabilidade/@-27.7965904,-49.4924894,17z/data=!4m6!3m5!1s0x9520659536e1f187:0x4e4851db757cfee0!8m2!3d-27.7965904!4d-49.4924894!16s%2Fg%2F11js3b00mc" target="_blank" rel="noopener" id="btnAvaliar">Avaliar a D&amp;M</a>
         </div>
       </aside>
-      <figure class="depo rv d1" data-depo style="--ds:7;--d:5;--t:4">
-        <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
-        <blockquote>Excelente escritório..muito de toda documentação para regularizar minha casa localizada na zona rural</blockquote>
-        <figcaption class="autor"><span class="avatar" aria-hidden="true">J</span><span><strong>José Roberto F.</strong><span>Google Maps</span></span></figcaption>
-      </figure>
-      <figure class="depo rv d2" data-depo style="--d:5;--t:4">
-        <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
-        <blockquote>Melhor contabilidade, profissionais de alto nível.</blockquote>
-        <figcaption class="autor"><span class="avatar" aria-hidden="true">R</span><span><strong>Renan D.</strong><span>Google Maps</span></span></figcaption>
-      </figure>
+      <div class="depo-trilho rv d1" style="--ds:6;--d:11;--t:8">
+        <div class="depo-lista" id="depoLista" tabindex="0" aria-label="Avaliações de clientes no Google">
+          <figure class="depo" data-depo>
+            <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
+            <blockquote>Excelente escritório..muito de toda documentação para regularizar minha casa localizada na zona rural</blockquote>
+            <figcaption class="autor"><img class="avatar" src="/img/aval-jose.jpg" alt="" width="48" height="48" loading="lazy"><span><strong>José Roberto F.</strong><span>Google Maps · outubro de 2026</span></span></figcaption>
+          </figure>
+          <figure class="depo" data-depo>
+            <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
+            <blockquote>Melhor contabilidade, profissionais de alto nível.</blockquote>
+            <figcaption class="autor"><span class="avatar" aria-hidden="true">R</span><span><strong>Renan D.</strong><span>Google Maps · outubro de 2026</span></span></figcaption>
+          </figure>
+          <figure class="depo" data-depo>
+            <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
+            <blockquote>Serviço de excelência!</blockquote>
+            <figcaption class="autor"><img class="avatar" src="/img/aval-fernando.jpg" alt="" width="48" height="48" loading="lazy"><span><strong>Fernando P.</strong><span>Google Maps · novembro de 2026</span></span></figcaption>
+          </figure>
+          <figure class="depo" data-depo>
+            <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
+            <blockquote>Pessoal super prestativos e profissional.</blockquote>
+            <figcaption class="autor"><span class="avatar" aria-hidden="true">R</span><span><strong>Romildo M.</strong><span>Google Maps · novembro de 2026</span></span></figcaption>
+          </figure>
+          <figure class="depo" data-depo>
+            <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
+            <blockquote>Trabalho excelente</blockquote>
+            <figcaption class="autor"><span class="avatar" aria-hidden="true">G</span><span><strong>Gislaine S.</strong><span>Google Maps · novembro de 2026</span></span></figcaption>
+          </figure>
+          <figure class="depo" data-depo>
+            <div class="estrelas" aria-label="5 de 5 estrelas"><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg><svg class="i"><use href="#i-estrela"/></svg></div>
+            <blockquote>Ótimo escritório</blockquote>
+            <figcaption class="autor"><img class="avatar" src="/img/aval-camilla.jpg" alt="" width="48" height="48" loading="lazy"><span><strong>Camilla P.</strong><span>Google Maps · outubro de 2026</span></span></figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
-    <p class="aval-aviso">Fonte: Google Maps. Mostramos avaliações recentes e mais relevantes do Google Maps, com nota 4 ou 5 e comentário; avaliações de pessoas da equipe não são exibidas. O Google não verifica as avaliações, mas remove conteúdo falso quando identificado.</p>
+    <p class="aval-aviso">Fonte: Google Maps. Mostramos todas as avaliações de clientes com nota 4 ou 5 e comentário; avaliações de pessoas da equipe não são exibidas. O Google não verifica as avaliações, mas remove conteúdo falso quando identificado.</p>
   </div>
 </section>
 

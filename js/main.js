@@ -149,6 +149,19 @@
     document.documentElement.classList.add('tem-aviso');
   }).catch(()=>{});
 
+  /* ---------- carrossel de avaliações ---------- */
+  const dl=document.getElementById('depoLista');
+  if(dl){
+    const ant=document.getElementById('depoAnt'),prox=document.getElementById('depoProx');
+    const passo=()=>{const c=dl.querySelector('.depo');return c?c.getBoundingClientRect().width+parseFloat(getComputedStyle(dl).columnGap||16):dl.clientWidth};
+    const estado=()=>{ant.disabled=dl.scrollLeft<4;prox.disabled=dl.scrollLeft+dl.clientWidth>=dl.scrollWidth-4};
+    ant.addEventListener('click',()=>dl.scrollBy({left:-passo()}));
+    prox.addEventListener('click',()=>dl.scrollBy({left:passo()}));
+    dl.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();prox.click()}if(e.key==='ArrowLeft'){e.preventDefault();ant.click()}});
+    dl.addEventListener('scroll',()=>requestAnimationFrame(estado),{passive:true});
+    addEventListener('resize',estado);estado();
+  }
+
   /* ---------- avaliações do Google (/api/avaliacoes), carregadas quando a seção aparece ---------- */
   const secAval=document.getElementById('avaliacoes');
   if(secAval&&location.protocol.startsWith('http')&&'IntersectionObserver' in window){
